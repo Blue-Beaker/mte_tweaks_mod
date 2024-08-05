@@ -1,0 +1,17 @@
+{
+    "required": true,
+    "compatibilityLevel": "JAVA_8",
+    "package": "io.bluebeaker.mtetweaks.mixin",
+    "mixins": [
+      "AccessorWindSim",
+      "MixinWindSim"
+    ],
+    "client": [
+    ],
+    "server": [
+    ],
+    "injectors": {
+      "defaultRequire": 1
+    },
+    "refmap": "mixins.mtetweaks.refmap.json"
+  }

@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "mtetweaks",
+  "name": "MTE Tweaks",
+  "description": "Tweaks for Minetech Evolution.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["CleanroomMC"],
-  "credits": "Authors of this project",
+  "authorList": ["Blue_Beaker"],
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
