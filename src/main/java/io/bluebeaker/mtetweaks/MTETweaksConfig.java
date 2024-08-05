@@ -7,7 +7,7 @@ import net.minecraftforge.common.config.Config.Type;
 
 @Config(modid = MTETweaksMod.MODID,type = Type.INSTANCE,category = "general")
 public class MTETweaksConfig {
-    @Comment("Windless Dimensions")
+    @Comment("List of Windless Dimensions.")
     @LangKey("config.mtetweaks.windlessdims.name")
     public static int[] windlessDims = new int[]{2,-30,-28,-27,-26};
 
