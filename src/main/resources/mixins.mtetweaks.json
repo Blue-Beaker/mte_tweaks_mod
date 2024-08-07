@@ -4,7 +4,9 @@
     "package": "io.bluebeaker.mtetweaks.mixin",
     "mixins": [
       "AccessorWindSim",
-      "MixinWindSim"
+      "MixinWindSim",
+      "MixinWindGenerator",
+      "AccessorWindGenerator"
     ],
     "client": [
     ],
