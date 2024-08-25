@@ -12,7 +12,6 @@ import ic2.core.block.generator.tileentity.TileEntityWindGenerator;
 public class MixinWindGenerator {
     @Inject(remap = false, method = "<init>()V", at = @At(value = "RETURN"),cancellable = false)
     private void windGenerator(CallbackInfo ci) {
-        // ((AccessorWindGenerator)(Object)this).setTicker(127);
         this.ticker=127;
     }
     @Shadow(remap = false)

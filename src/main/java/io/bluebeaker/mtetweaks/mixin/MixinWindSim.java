@@ -14,7 +14,6 @@ import net.minecraft.world.World;
 public class MixinWindSim {
     @Inject(method = "getWindAt(D)D",at = @At("HEAD"),cancellable = true,remap = false)
     public void getWindAt(double height, CallbackInfoReturnable<Double> cir) {
-        // int dimensionID = ((AccessorWindSim)(Object)this).getWorld().provider.getDimension();
         int dimensionID = this.world.provider.getDimension();
         if(ConfigHandler.windlessDims.contains(dimensionID)){
             cir.setReturnValue(0.0d);
