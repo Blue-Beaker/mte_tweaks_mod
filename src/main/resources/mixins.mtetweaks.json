@@ -5,7 +5,9 @@
     "mixins": [
       "MixinWindSim",
       "MixinWindGenerator",
-      "MixinMassFabricator"
+      "MixinMassFabricator",
+      "MixinElectricTool",
+      "MixinElectricArmor"
     ],
     "client": [
     ],
