@@ -3,10 +3,9 @@
     "compatibilityLevel": "JAVA_8",
     "package": "io.bluebeaker.mtetweaks.mixin",
     "mixins": [
-      "AccessorWindSim",
       "MixinWindSim",
       "MixinWindGenerator",
-      "AccessorWindGenerator"
+      "MixinMassFabricator"
     ],
     "client": [
     ],
