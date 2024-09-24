@@ -1,10 +1,10 @@
 package io.bluebeaker.mtetweaks;
 
-import org.luaj.vm2.lib.PackageLib.searchpath;
-
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.Config.Comment;
 import net.minecraftforge.common.config.Config.LangKey;
+import net.minecraftforge.common.config.Config.RangeDouble;
+import net.minecraftforge.common.config.Config.RangeInt;
 import net.minecraftforge.common.config.Config.Type;
 
 @Config(modid = MTETweaksMod.MODID,type = Type.INSTANCE,category = "general")
@@ -21,5 +21,9 @@ public class MTETweaksConfig {
 
     @LangKey("config.mtetweaks.etools_enchantable.name")
     public static boolean etools_enchantable=true;
+
+    @LangKey("config.mtetweaks.road_walk_speed.name")
+    @RangeDouble(min=0.0001,max=10000.0)
+    public static double road_walk_speed=1.25D;
 
 }

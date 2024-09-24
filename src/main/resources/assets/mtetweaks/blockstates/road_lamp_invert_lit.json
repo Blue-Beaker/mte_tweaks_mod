@@ -1,0 +1,13 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+      "model": "mtetweaks:road_lamp_on",
+      "uvlock": true,
+      "transform": "forge:default-block"
+    },
+    "variants": {
+      "normal": [{}],
+      "inventory": [{}]
+    }
+  }
+  

@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "particle": "mtetweaks:blocks/road_block",
+        "all": "mtetweaks:blocks/road_block"
+    }
+}

@@ -2,3 +2,4 @@ config.mtetweaks.windlessdims.name=Windless Dimensions
 config.mtetweaks.etool_attack_speed.name=Chainsaw/Drill attack speed
 config.mtetweaks.etool_attack_speed_2.name=Other electric tools attack speed
 config.mtetweaks.etools_enchantable.name=Make electric tools enchantable
+config.mtetweaks.road_walk_speed.name=Walk speed multiplier for road blocks
