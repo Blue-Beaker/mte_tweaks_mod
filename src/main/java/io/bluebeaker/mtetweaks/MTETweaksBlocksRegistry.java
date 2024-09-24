@@ -40,10 +40,10 @@ public class MTETweaksBlocksRegistry {
         Item ROAD_LAMP_ITEM=new ItemBlock(ROAD_LAMP).setRegistryName(ROAD_LAMP.getRegistryName());
         Item ROAD_LAMP_INVERT_ITEM=new ItemBlock(ROAD_LAMP_INVERT_LIT).setRegistryName(ROAD_LAMP_INVERT_LIT.getRegistryName());
         ModelLoader.setCustomModelResourceLocation(ROAD_BLOCK_ITEM,0,new ModelResourceLocation(ROAD_BLOCK.getRegistryName(),"inventory"));
-        ModelLoader.setCustomModelResourceLocation(ROAD_LAMP_ITEM,0,new ModelResourceLocation(ROAD_LAMP.getRegistryName(),"inventory"));
-        ModelLoader.setCustomModelResourceLocation(ROAD_LAMP_INVERT_ITEM,0,new ModelResourceLocation(ROAD_LAMP_INVERT_LIT.getRegistryName(),"inventory"));
         event.getRegistry().register(ROAD_BLOCK_ITEM);
+        ModelLoader.setCustomModelResourceLocation(ROAD_LAMP_ITEM,0,new ModelResourceLocation(ROAD_LAMP.getRegistryName(),"inventory"));
         event.getRegistry().register(ROAD_LAMP_ITEM);
+        ModelLoader.setCustomModelResourceLocation(ROAD_LAMP_INVERT_ITEM,0,new ModelResourceLocation(ROAD_LAMP_INVERT_LIT.getRegistryName(),"inventory"));
         event.getRegistry().register(ROAD_LAMP_INVERT_ITEM);
     }
 }
