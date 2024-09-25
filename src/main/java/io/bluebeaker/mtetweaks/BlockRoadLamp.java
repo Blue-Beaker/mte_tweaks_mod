@@ -50,19 +50,19 @@ public class BlockRoadLamp extends BlockRoad {
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(this.inverted?MTETweaksBlocksRegistry.ROAD_LAMP_INVERT:MTETweaksBlocksRegistry.ROAD_LAMP);
+        return Item.getItemFromBlock(this.inverted?MTETweaksBlocksRegistry.ROAD_LAMP_INVERT_LIT:MTETweaksBlocksRegistry.ROAD_LAMP);
     }
 
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(this.inverted?MTETweaksBlocksRegistry.ROAD_LAMP_INVERT:MTETweaksBlocksRegistry.ROAD_LAMP);
+        return new ItemStack(this.inverted?MTETweaksBlocksRegistry.ROAD_LAMP_INVERT_LIT:MTETweaksBlocksRegistry.ROAD_LAMP);
     }
 
     @Override
     protected ItemStack getSilkTouchDrop(IBlockState state)
     {
-        return new ItemStack(this.inverted?MTETweaksBlocksRegistry.ROAD_LAMP_INVERT:MTETweaksBlocksRegistry.ROAD_LAMP);
+        return new ItemStack(this.inverted?MTETweaksBlocksRegistry.ROAD_LAMP_INVERT_LIT:MTETweaksBlocksRegistry.ROAD_LAMP);
     }
     
 }
