@@ -14,7 +14,7 @@ public class BlockRoad extends Block {
         super(Material.ROCK);
         this.setCreativeTab(CreativeTabs.DECORATIONS);
         this.setHardness(1.5f);
-        this.setResistance(6.0f);
+        this.setResistance(10.0f);
         this.setHarvestLevel("pickaxe", -1);
         this.setDefaultSlipperiness((float)(0.6/MTETweaksConfig.road_walk_speed));
     }
