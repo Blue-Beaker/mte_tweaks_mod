@@ -117,6 +117,13 @@ dependencies {
     runtimeOnly rfg.deobf('curse.maven:had-enough-items-557549:4543375')
     runtimeOnly rfg.deobf('curse.maven:ftb-library-legacy-forge-237167:2985811')
     runtimeOnly rfg.deobf('curse.maven:ftb-utilities-forge-237102:3157548')
+    // implementation rfg.deobf('curse.maven:thermal-expansion-69163:2926431')
+    implementation rfg.deobf('libs:CodeChickenLib-1.12.2-3.2.3.358-universal')
+    implementation rfg.deobf('libs:CoFHCore-1.12.2-4.6.6.1-universal')
+    implementation rfg.deobf('libs:CoFHWorld-1.12.2-1.4.0.1-universal')
+    implementation rfg.deobf('libs:RedstoneFlux-1.12-2.1.1.1-universal')
+    implementation rfg.deobf('libs:ThermalExpansion-1.12.2-5.5.7.1-universal')
+    implementation rfg.deobf('libs:ThermalFoundation-1.12.2-2.6.7.1-universal')
 
     // implementation rfg.deobf("CraftTweaker2:CraftTweaker2-MC1120-Main:${version_crafttweaker}")
     // implementation rfg.deobf("com.teamacronymcoders:ContentTweaker:1.12.2-4.10.0")

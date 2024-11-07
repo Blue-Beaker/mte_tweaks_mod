@@ -25,4 +25,8 @@ public class MTETweaksConfig {
     @RangeDouble(min=0.0001,max=10000.0)
     public static double road_walk_speed=1.25D;
 
+    public static String[] wrenches={"thermalfoundation:wrench"};
+    @Comment("Extra blocks to be broken when sneak-using a wrench defined above.")
+    public static String[] wrenchable_blocks={"minecraft:piston","minecraft:sticky_piston"};
+
 }
