@@ -11,6 +11,7 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent.OnConfigChangedEve
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -36,6 +37,10 @@ public class MTETweaksMod
         this.server=event.getServer();
     }
     @EventHandler
+    public void preInit(FMLPreInitializationEvent event){
+        logger = event.getModLog();
+    }
+    @EventHandler
     public void onInit(FMLInitializationEvent event){
         ConfigHandler.loadConfig();
     }
@@ -55,7 +60,7 @@ public class MTETweaksMod
             ConfigHandler.loadConfig();
         }
     }
-    public void logInfo(String log){
-        logger.info(log);
+    public static Logger getLogger(){
+        return logger;
     }
 }

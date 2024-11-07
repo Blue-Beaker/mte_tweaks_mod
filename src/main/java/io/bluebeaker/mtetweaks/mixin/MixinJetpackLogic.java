@@ -8,6 +8,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import ic2.core.IC2;
 import ic2.core.item.armor.jetpack.IJetpack;
 import ic2.core.item.armor.jetpack.JetpackLogic;
+import io.bluebeaker.mtetweaks.MTETweaksConfig;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Vec3d;
@@ -16,7 +17,7 @@ import net.minecraft.util.math.Vec3d;
 public class MixinJetpackLogic {
     @Inject(remap = false,method = "useJetpack",at = @At(value = "FIELD",target="Lnet/minecraft/entity/player/EntityPlayer;field_70181_x"),cancellable = true)
     private static void useJetpackOnElytra(EntityPlayer player, boolean hoverMode, IJetpack jetpack, ItemStack stack,CallbackInfoReturnable<Boolean> cir){
-        if(hoverMode){
+        if(hoverMode || !MTETweaksConfig.jetpack_boost_forward){
             return;
         }
         if(player.isElytraFlying() && IC2.keyboard.isForwardKeyDown(player)){

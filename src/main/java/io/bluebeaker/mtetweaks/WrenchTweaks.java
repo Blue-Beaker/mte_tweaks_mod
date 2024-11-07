@@ -24,14 +24,16 @@ public class WrenchTweaks {
     }
 
     @SubscribeEvent
-    public static void onBreakWithWrench(BreakSpeed event){
-        if(MTETweaksConfig.cofh_wrench_on_ic2_machines==1.0f) return;
+    public static void onBreakWithWrench(BreakSpeed event) {
+        if (MTETweaksConfig.cofh_wrench_on_ic2_machines == 1.0f)
+            return;
         ItemStack stack = event.getEntityPlayer().getHeldItemMainhand();
-        if(isWrench(stack, event.getEntityPlayer(), event.getPos())){
-            if(event.getState().getBlock().getHarvestTool(event.getState())=="wrench"){
+        if (isWrench(stack, event.getEntityPlayer(), event.getPos())) {
+            if (event.getState().getBlock().getHarvestTool(event.getState()) == "wrench") {
                 event.setNewSpeed(event.getOriginalSpeed() / stack.getDestroySpeed(event.getState()) * 4);
             }
-        };
+        }
+        ;
     }
 
     @SubscribeEvent
@@ -39,9 +41,8 @@ public class WrenchTweaks {
         if (!event.getEntityPlayer().isSneaking())
             return;
         ItemStack stack = event.getItemStack();
-        if (!isWrench(stack,event.getEntityPlayer(),event.getPos()))
+        if (!isWrench(stack, event.getEntityPlayer(), event.getPos()))
             return;
-
         IBlockState state = event.getWorld().getBlockState(event.getPos());
         if (isWrenchable(state)) {
             state.getBlock().removedByPlayer(state, event.getWorld(), event.getPos(), event.getEntityPlayer(), true);
@@ -53,7 +54,7 @@ public class WrenchTweaks {
         }
     }
 
-    private static boolean isWrench(ItemStack stack,EntityPlayer player,BlockPos pos) {
+    private static boolean isWrench(ItemStack stack, EntityPlayer player, BlockPos pos) {
 
         if (stack.getItem() instanceof IToolHammer) {
             return ((IToolHammer) stack.getItem()).isUsable(stack, player, pos);
@@ -80,17 +81,24 @@ public class WrenchTweaks {
                 return true;
             }
             for (Map<String, String> allowedState : allowedStates) {
-                checkStateMatches(state, allowedState);
+                if (checkStateMatches(state, allowedState))
+                    return true;
             }
         }
         return false;
     }
 
-    private static boolean checkStateMatches(IBlockState state, Map<String, String> allowedState) {
-        for (IProperty<?> prop : state.getPropertyKeys()) {
+    private static <T extends Comparable<T>> boolean checkStateMatches(IBlockState state,
+            Map<String, String> allowedState) {
+        if (MTETweaksConfig.log_debug)
+            MTETweaksMod.getLogger().info(allowedState.toString());
+        for (Map.Entry<IProperty<?>, Comparable<?>> item : state.getProperties().entrySet()) {
+            IProperty<T> prop = (IProperty<T>) item.getKey();
             String propName = prop.getName();
+            if (MTETweaksConfig.log_debug)
+                MTETweaksMod.getLogger().info(propName + "=" + prop.getName((T) item.getValue()));
             if (allowedState.containsKey(propName)) {
-                if (state.getProperties().get(prop).toString() != allowedState.get(propName))
+                if (!prop.getName((T) item.getValue()).equals(allowedState.get(propName)))
                     return false;
             }
         }

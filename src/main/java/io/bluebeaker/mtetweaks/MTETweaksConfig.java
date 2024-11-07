@@ -34,4 +34,8 @@ public class MTETweaksConfig {
     @Comment("Extra blocks to be broken when sneak-using a wrench defined above.")
     public static String[] wrenchable_blocks={"minecraft:piston","minecraft:sticky_piston"};
 
+    public static boolean jetpack_boost_forward=true;
+
+    public static boolean log_debug=false;
+
 }

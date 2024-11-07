@@ -9,6 +9,8 @@ import java.util.Set;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.util.ResourceLocation;
+
 public class Utils {
     /**
      * @param str comma-separated strings. also uses '-' for defining ranges
@@ -37,16 +39,24 @@ public class Utils {
         List<Map<String,String>> maps = new ArrayList<>();
         String[] states = str.split(";");
         for(String stateDef:states){
-            Map<String,String> state = new HashMap<>();
+            Map<String,String> propertyMap = new HashMap<>();
             String[] pairs = stateDef.split(",");
             for(String pair:pairs){
                 String[] split2 = pair.split("=");
-                String key=split2[0];
-                String value=split2[1];
-                state.put(key, value);
+                String key=split2[0].trim();
+                String value=split2[1].trim();
+                propertyMap.put(key, value);
             }
-            maps.add(state);
+            maps.add(propertyMap);
         }
         return maps;
+    }
+    public static ResourceLocation getResourceLocationFromStr(String str){
+        String[] split0 = str.split(":",3);
+        if(split0.length>=2){
+            return new ResourceLocation(split0[0],split0[1]);
+        }else{
+            return new ResourceLocation(split0[0]);
+        }
     }
 }   
