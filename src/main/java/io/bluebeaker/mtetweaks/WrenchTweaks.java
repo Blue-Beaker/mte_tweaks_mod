@@ -7,10 +7,13 @@ import java.util.Set;
 import cofh.api.item.IToolHammer;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -21,17 +24,23 @@ public class WrenchTweaks {
     }
 
     @SubscribeEvent
+    public static void onBreakWithWrench(BreakSpeed event){
+        if(MTETweaksConfig.cofh_wrench_on_ic2_machines==1.0f) return;
+        ItemStack stack = event.getEntityPlayer().getHeldItemMainhand();
+        if(isWrench(stack, event.getEntityPlayer(), event.getPos())){
+            if(event.getState().getBlock().getHarvestTool(event.getState())=="wrench"){
+                event.setNewSpeed(event.getOriginalSpeed() / stack.getDestroySpeed(event.getState()) * 4);
+            }
+        };
+    }
+
+    @SubscribeEvent
     public static void onUseWrench(RightClickBlock event) {
         if (!event.getEntityPlayer().isSneaking())
             return;
         ItemStack stack = event.getItemStack();
-        if (stack.getItem() instanceof IToolHammer) {
-            if (!((IToolHammer) stack.getItem()).isUsable(stack, event.getEntityPlayer(), event.getPos()))
-                return;
-        } else {
-            if (!isWrench(stack))
-                return;
-        }
+        if (!isWrench(stack,event.getEntityPlayer(),event.getPos()))
+            return;
 
         IBlockState state = event.getWorld().getBlockState(event.getPos());
         if (isWrenchable(state)) {
@@ -44,7 +53,11 @@ public class WrenchTweaks {
         }
     }
 
-    private static boolean isWrench(ItemStack stack) {
+    private static boolean isWrench(ItemStack stack,EntityPlayer player,BlockPos pos) {
+
+        if (stack.getItem() instanceof IToolHammer) {
+            return ((IToolHammer) stack.getItem()).isUsable(stack, player, pos);
+        }
         ResourceLocation id = stack.getItem().getRegistryName();
         if (id != null && ConfigHandler.wrenches.containsKey(id)) {
             Set<Integer> allowedMetas = ConfigHandler.wrenches.get(id);

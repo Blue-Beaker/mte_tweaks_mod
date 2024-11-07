@@ -3,6 +3,7 @@ config.mtetweaks.etool_attack_speed.name=Chainsaw/Drill attack speed
 config.mtetweaks.etool_attack_speed_2.name=Other electric tools attack speed
 config.mtetweaks.etools_enchantable.name=Make electric tools enchantable
 config.mtetweaks.road_walk_speed.name=Walk speed multiplier for road blocks
+config.mtetweaks.cofh_wrench_on_ic2_machines.name=CoFH Wrench for IC2 speed
 tile.mtetweaks.road_block.name=Road Bricks
 tile.mtetweaks.road_lamp.name=Road Lamp
 tile.mtetweaks.road_lamp_lit.name=Road Lamp

@@ -25,6 +25,11 @@ public class MTETweaksConfig {
     @RangeDouble(min=0.0001,max=10000.0)
     public static double road_walk_speed=1.25D;
 
+    @Comment("Tweak speed of harvesting IC2 machines with thermal wrench.")
+    @LangKey("config.mtetweaks.cofh_wrench_on_ic2_machines.name")
+    @RangeDouble(min=0.0001,max=10000.0)
+    public static float cofh_wrench_on_ic2_machines=4.0f;
+
     public static String[] wrenches={};
     @Comment("Extra blocks to be broken when sneak-using a wrench defined above.")
     public static String[] wrenchable_blocks={"minecraft:piston","minecraft:sticky_piston"};
