@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import cofh.api.item.IToolHammer;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Enchantments;
@@ -15,21 +16,31 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class WrenchTweaks {
     private static ItemStack itemSilk = new ItemStack(Items.DIAMOND_PICKAXE);
-    static{
+    static {
         itemSilk.addEnchantment(Enchantments.SILK_TOUCH, 1);
     }
+
     @SubscribeEvent
     public static void onUseWrench(RightClickBlock event) {
         if (!event.getEntityPlayer().isSneaking())
             return;
-        if (!isWrench(event.getItemStack()))
-            return;
+        ItemStack stack = event.getItemStack();
+        if (stack.getItem() instanceof IToolHammer) {
+            if (!((IToolHammer) stack.getItem()).isUsable(stack, event.getEntityPlayer(), event.getPos()))
+                return;
+        } else {
+            if (!isWrench(stack))
+                return;
+        }
+
         IBlockState state = event.getWorld().getBlockState(event.getPos());
-        if(isWrenchable(state)){
+        if (isWrenchable(state)) {
             state.getBlock().removedByPlayer(state, event.getWorld(), event.getPos(), event.getEntityPlayer(), true);
             state.getBlock().harvestBlock(event.getWorld(), event.getEntityPlayer(), event.getPos(), state,
-             event.getWorld().getTileEntity(event.getPos()),itemSilk);
-            // event.getWorld().destroyBlock(event.getPos(), true);
+                    event.getWorld().getTileEntity(event.getPos()), itemSilk);
+        }
+        if (stack.getItem() instanceof IToolHammer) {
+            ((IToolHammer) stack.getItem()).toolUsed(stack, event.getEntityPlayer(), event.getPos());
         }
     }
 
