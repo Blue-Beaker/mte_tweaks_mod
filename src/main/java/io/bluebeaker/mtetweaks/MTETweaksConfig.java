@@ -34,7 +34,10 @@ public class MTETweaksConfig {
     @Comment("Extra blocks to be broken when sneak-using a wrench defined above.")
     public static String[] wrenchable_blocks={"minecraft:piston","minecraft:sticky_piston"};
 
-    public static boolean jetpack_boost_forward=true;
+    @Comment("When flying with elytra + IC2 jetpack, hold forward + jump to boost forward. Set 0 to disable.")
+    @LangKey("config.mtetweaks.jetpack_boost_forward.name")
+    @RangeDouble(min=0,max = 10000.0)
+    public static double jetpack_elytra_boost=0.1D;
 
     public static boolean log_debug=false;
 

@@ -17,14 +17,15 @@ import net.minecraft.util.math.Vec3d;
 public class MixinJetpackLogic {
     @Inject(remap = false,method = "useJetpack",at = @At(value = "FIELD",target="Lnet/minecraft/entity/player/EntityPlayer;field_70181_x"),cancellable = true)
     private static void useJetpackOnElytra(EntityPlayer player, boolean hoverMode, IJetpack jetpack, ItemStack stack,CallbackInfoReturnable<Boolean> cir){
-        if(hoverMode || !MTETweaksConfig.jetpack_boost_forward){
+        if(hoverMode || MTETweaksConfig.jetpack_elytra_boost<=0){
             return;
         }
         if(player.isElytraFlying() && IC2.keyboard.isForwardKeyDown(player)){
             Vec3d vec3d = player.getLookVec();
-            player.motionX += vec3d.x * 0.05D + (vec3d.x * 2.5D - player.motionX) * 0.05D;
-            player.motionY += vec3d.y * 0.05D + (vec3d.y * 2.5D - player.motionY) * 0.05D;
-            player.motionZ += vec3d.z * 0.05D + (vec3d.z * 2.5D - player.motionZ) * 0.05D;
+            double boost = MTETweaksConfig.jetpack_elytra_boost;
+            player.motionX += vec3d.x * boost*0.1D + (vec3d.x * 1.5D - player.motionX) * boost;
+            player.motionY += vec3d.y * boost*0.1D + (vec3d.y * 1.5D - player.motionY) * boost;
+            player.motionZ += vec3d.z * boost*0.1D + (vec3d.z * 1.5D - player.motionZ) * boost;
             cir.setReturnValue(true);
         }
     }
