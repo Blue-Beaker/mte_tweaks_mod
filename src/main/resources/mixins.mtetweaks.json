@@ -6,6 +6,7 @@
       "MixinWindSim",
       "MixinWindGenerator",
       "MixinMassFabricator",
+      "MixinJetpackLogic",
       "MixinElectricTool",
       "MixinElectricArmor"
     ],
