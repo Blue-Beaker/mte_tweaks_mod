@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Set;
 
 import cofh.api.item.IToolHammer;
+import ic2.core.ref.IC2Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -34,7 +35,7 @@ public class WrenchTweaks {
             return;
         ItemStack stack = event.getEntityPlayer().getHeldItemMainhand();
         if (isUsableWrench(stack, event.getEntityPlayer(), event.getPos())) {
-            if (event.getState().getBlock().getHarvestTool(event.getState()) == "wrench") {
+            if (event.getState().getMaterial() == IC2Material.MACHINE || event.getState().getMaterial()==IC2Material.PIPE) {
                 event.setNewSpeed(event.getOriginalSpeed() / stack.getDestroySpeed(event.getState()) * 4);
             }
         }
