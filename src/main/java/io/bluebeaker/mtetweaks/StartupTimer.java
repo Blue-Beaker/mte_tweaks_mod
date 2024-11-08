@@ -13,6 +13,7 @@ public class StartupTimer {
     public static void onMainmenuOpen(GuiOpenEvent event){
         if(!triggered && event.getGui() instanceof GuiMainMenu)
         {
+            triggered=true;
             startupTime = ManagementFactory.getRuntimeMXBean().getUptime();
         }
 
