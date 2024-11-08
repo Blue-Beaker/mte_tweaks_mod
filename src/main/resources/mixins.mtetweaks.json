@@ -1,5 +1,5 @@
 {
-    "required": true,
+    "required": false,
     "compatibilityLevel": "JAVA_8",
     "package": "io.bluebeaker.mtetweaks.mixin",
     "mixins": [
@@ -8,7 +8,8 @@
       "MixinMassFabricator",
       "MixinJetpackLogic",
       "MixinElectricTool",
-      "MixinElectricArmor"
+      "MixinElectricArmor",
+      "MixinCMMString"
     ],
     "client": [
     ],

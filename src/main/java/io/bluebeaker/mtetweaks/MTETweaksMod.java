@@ -31,6 +31,7 @@ public class MTETweaksMod
     public MTETweaksMod() {
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(WrenchTweaks.class);
+        MinecraftForge.EVENT_BUS.register(StartupTimer.class);
     }
     @EventHandler
     public void onServerStart(FMLServerStartingEvent event){
