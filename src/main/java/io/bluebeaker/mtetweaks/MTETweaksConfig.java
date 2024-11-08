@@ -16,7 +16,7 @@ public class MTETweaksConfig {
     public static float etool_attack_speed=6.0f;
 
     @LangKey("config.mtetweaks.etool_attack_speed_2.name")
-    public static float etool_attack_speed_2=0.0f;
+    public static float etool_attack_speed_2=-2.4f;
 
     @LangKey("config.mtetweaks.etools_enchantable.name")
     public static boolean etools_enchantable=true;

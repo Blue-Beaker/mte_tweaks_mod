@@ -11,11 +11,15 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.eventhandler.Event.Result;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class WrenchTweaks {
     private static ItemStack itemSilk = new ItemStack(Items.DIAMOND_PICKAXE);
@@ -43,8 +47,12 @@ public class WrenchTweaks {
         ItemStack stack = event.getItemStack();
         if (!isWrench(stack, event.getEntityPlayer(), event.getPos()))
             return;
+
         IBlockState state = event.getWorld().getBlockState(event.getPos());
         if (isWrenchable(state)) {
+            event.setUseBlock(Result.DENY);
+            event.setUseItem(Result.ALLOW);
+            event.getEntityPlayer().swingArm(EnumHand.MAIN_HAND);
             state.getBlock().removedByPlayer(state, event.getWorld(), event.getPos(), event.getEntityPlayer(), true);
             state.getBlock().harvestBlock(event.getWorld(), event.getEntityPlayer(), event.getPos(), state,
                     event.getWorld().getTileEntity(event.getPos()), itemSilk);
