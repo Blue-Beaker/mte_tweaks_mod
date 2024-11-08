@@ -14,12 +14,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class WrenchTweaks {
     private static ItemStack itemSilk = new ItemStack(Items.DIAMOND_PICKAXE);
@@ -32,7 +33,7 @@ public class WrenchTweaks {
         if (MTETweaksConfig.cofh_wrench_on_ic2_machines == 1.0f)
             return;
         ItemStack stack = event.getEntityPlayer().getHeldItemMainhand();
-        if (isWrench(stack, event.getEntityPlayer(), event.getPos())) {
+        if (isUsableWrench(stack, event.getEntityPlayer(), event.getPos())) {
             if (event.getState().getBlock().getHarvestTool(event.getState()) == "wrench") {
                 event.setNewSpeed(event.getOriginalSpeed() / stack.getDestroySpeed(event.getState()) * 4);
             }
@@ -42,27 +43,37 @@ public class WrenchTweaks {
 
     @SubscribeEvent
     public static void onUseWrench(RightClickBlock event) {
-        if (!event.getEntityPlayer().isSneaking())
+        EntityPlayer player = event.getEntityPlayer();
+        if (!player.isSneaking())
             return;
         ItemStack stack = event.getItemStack();
-        if (!isWrench(stack, event.getEntityPlayer(), event.getPos()))
+        BlockPos pos = event.getPos();
+        if (!isUsableWrench(stack, player, pos))
             return;
-
-        IBlockState state = event.getWorld().getBlockState(event.getPos());
+        World world = event.getWorld();
+        IBlockState state = world.getBlockState(pos);
         if (isWrenchable(state)) {
             event.setUseBlock(Result.DENY);
             event.setUseItem(Result.ALLOW);
-            event.getEntityPlayer().swingArm(EnumHand.MAIN_HAND);
-            state.getBlock().removedByPlayer(state, event.getWorld(), event.getPos(), event.getEntityPlayer(), true);
-            state.getBlock().harvestBlock(event.getWorld(), event.getEntityPlayer(), event.getPos(), state,
-                    event.getWorld().getTileEntity(event.getPos()), itemSilk);
+            player.swingArm(EnumHand.MAIN_HAND);
+
+            // Post the block break event
+            BlockEvent.BreakEvent event2 = new BlockEvent.BreakEvent(world, pos, state, player);
+            MinecraftForge.EVENT_BUS.post(event2);
+
+            // Handle if the event is canceled
+            if (!event2.isCanceled() || event2.getResult() == Result.DENY) {
+                if (state.getBlock().removedByPlayer(state, world, pos, player, true))
+                    state.getBlock().harvestBlock(world, player, pos, state,
+                            world.getTileEntity(pos), itemSilk);
+            }
         }
         if (stack.getItem() instanceof IToolHammer) {
-            ((IToolHammer) stack.getItem()).toolUsed(stack, event.getEntityPlayer(), event.getPos());
+            ((IToolHammer) stack.getItem()).toolUsed(stack, player, pos);
         }
     }
 
-    private static boolean isWrench(ItemStack stack, EntityPlayer player, BlockPos pos) {
+    private static boolean isUsableWrench(ItemStack stack, EntityPlayer player, BlockPos pos) {
 
         if (stack.getItem() instanceof IToolHammer) {
             return ((IToolHammer) stack.getItem()).isUsable(stack, player, pos);
