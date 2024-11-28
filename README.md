@@ -1,20 +1,21 @@
-## TemplateDevEnv
+# MTE Tweaks
 
-Template workspace for modding Minecraft 1.12.2. Licensed under MIT, it is made for public use.
+Tweaks for [Minetech Evolution](https://www.curseforge.com/minecraft/modpacks/minetech-evolution) modpack.
 
-This template currently utilizies **Gradle 8.1.1** + **[RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 1.3.27** + **Forge 14.23.5.2847**.
+Features: 
+- Disables IC2 wind generators on airless planets.  
+- Increases attack speed of IC2 electric tools.  
+- Revert enchantability of IC2 electric equipments to 1.7-like: no enchanting table, but anvil is ok.  
+- Patched IC2 mass fabricator (old UU) to prevent stucking forever at 100% scrap.  
+- With IC2 jetpack and Elytra equipped: hold jump+forward to boost forward, like using a firework rocket.  
+- Add support for startup time string to CustomMainMenu mod: `#startuptime#`  
+- Make thermal wrench dig IC2 machines faster  
+- Make more blocks able to dismantle with wrench (configurable)  
+- Road bricks and lamps. Walk faster on it  
 
-With **coremod and mixin support** that is easy to configure.
+With these tweaks you will found the immersive, classic and enjoyful experience in the modpack.
 
-### Instructions:
+Tweaks to other mods in the pack may also be added in future.  
+New patches for mods will be added to [MTE Patches](https://www.curseforge.com/minecraft/mc-mods/mte-patches) instead.  
 
-1. Click `use this template` at the top.
-2. Clone the repository you have created with this template.
-3. In the local repository, run the command `gradlew setupDecompWorkspace`
-4. Open the project folder in IDEA.
-5. Right-click in IDEA `build.gradle` of your project, and select `Link Gradle Project`, after completion, hit `Refresh All` in the gradle tab on the right.
-6. Run `gradlew runClient` and `gradlew runServer`, or use the auto-imported run configurations in IntelliJ like `1. Run Client`.
-
-### Mixins:
-
-- When writing Mixins on IntelliJ, it is advisable to use latest [MinecraftDev Fork for RetroFuturaGradle](https://github.com/eigenraven/MinecraftDev/releases).
+If you want to use outside of the pack, be careful. It may not always work. You may want to make a fork and delete unwanted features.  
