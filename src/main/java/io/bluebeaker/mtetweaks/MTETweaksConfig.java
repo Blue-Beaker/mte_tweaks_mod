@@ -34,7 +34,9 @@ public class MTETweaksConfig {
     @RangeDouble(min=0.0001,max=10000.0)
     public static float cofh_wrench_on_ic2_machines=4.0f;
 
+    @LangKey("config.mtetweaks.wrenches.name")
     public static String[] wrenches={};
+    @LangKey("config.mtetweaks.wrenchable_blocks.name")
     @Comment("Extra blocks to be broken when sneak-using a wrench defined above.")
     public static String[] wrenchable_blocks={"minecraft:piston","minecraft:sticky_piston"};
 
