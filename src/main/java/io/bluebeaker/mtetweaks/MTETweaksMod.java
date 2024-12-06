@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.event.FMLServerStoppingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import org.apache.logging.log4j.Logger;
@@ -35,11 +36,19 @@ public class MTETweaksMod
     public void onServerStart(FMLServerStartingEvent event){
         this.server=event.getServer();
     }
+
+    @EventHandler
+    public void onServereStop(FMLServerStoppingEvent event){
+        HazmatCharmLogic.onServerStop(event);
+    }
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
         logger = event.getModLog();
         MinecraftForge.EVENT_BUS.register(WrenchTweaks.class);
         MinecraftForge.EVENT_BUS.register(StartupTimer.class);
+        MinecraftForge.EVENT_BUS.register(MTETweaksItems.class);
+        MinecraftForge.EVENT_BUS.register(HazmatCharmLogic.class);
     }
     @EventHandler
     public void onInit(FMLInitializationEvent event){

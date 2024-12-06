@@ -9,6 +9,7 @@
 		"MixinCMMString",
 		"MixinElectricArmor",
 		"MixinElectricTool",
+		"MixinItemArmorHazmat",
 		"MixinJetpackLogic",
 		"MixinWindGenerator",
 		"MixinWindSim"

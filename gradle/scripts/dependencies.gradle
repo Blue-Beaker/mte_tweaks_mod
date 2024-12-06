@@ -41,12 +41,14 @@ dependencies {
     runtimeOnly 'com.cleanroommc:strip-latest-forge-requirements:1.0'
 
     // For easier testing
-    runtimeOnly rfg.deobf('curse.maven:had-enough-items-557549:4543375')
+    implementation rfg.deobf('curse.maven:had-enough-items-557549:4543375')
     runtimeOnly rfg.deobf('curse.maven:ftb-library-legacy-forge-237167:2985811')
     runtimeOnly rfg.deobf('curse.maven:ftb-utilities-forge-237102:3157548')
     
     implementation rfg.deobf('industrialcraft-2:industrialcraft-2-2.8.222-ex112')
     // implementation rfg.deobf('curse.maven:thermal-expansion-69163:2926431')
+    implementation rfg.deobf('libs:Baubles-1.12-1.5.2')
+
     implementation rfg.deobf('libs:CodeChickenLib-1.12.2-3.2.3.358-universal')
     implementation rfg.deobf('libs:CoFHCore-1.12.2-4.6.6.1-universal')
     implementation rfg.deobf('libs:CoFHWorld-1.12.2-1.4.0.1-universal')
