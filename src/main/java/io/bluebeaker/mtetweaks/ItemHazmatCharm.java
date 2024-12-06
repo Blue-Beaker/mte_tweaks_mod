@@ -25,7 +25,6 @@ import java.util.List;
 
 @ParametersAreNonnullByDefault
 public class ItemHazmatCharm extends Item implements IPseudoDamageItem, IElectricItem, IBauble {
-    public int tickEnergyCost = 100;
     public ItemHazmatCharm(){
         super();
         this.setCreativeTab(CreativeTabs.MISC);
@@ -82,13 +81,17 @@ public class ItemHazmatCharm extends Item implements IPseudoDamageItem, IElectri
             "item.mtetweaks.hazmat_charm.tip").getFormattedText());
     }
 
+    public static int getTickEnergyCost(){
+        return MTETweaksConfig.hazmat_charm_cost;
+    };
+
     public boolean canUse(ItemStack stack){
-        return ElectricItem.manager.canUse(stack, this.tickEnergyCost);
+        return ElectricItem.manager.canUse(stack, getTickEnergyCost());
     }
 
     public void tickPassive(ItemStack stack){
         if(this.canUse(stack)){
-            ElectricItem.manager.discharge(stack,this.tickEnergyCost,4,true,false,false);
+            ElectricItem.manager.discharge(stack, getTickEnergyCost(),4,true,false,false);
         }
     }
 

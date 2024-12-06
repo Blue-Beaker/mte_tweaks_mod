@@ -25,6 +25,10 @@ public class MTETweaksConfig {
     @RangeDouble(min=0.0001,max=10000.0)
     public static double road_walk_speed=1.25D;
 
+    @Config.RangeInt(min = 0,max = 10000000)
+    @LangKey("config.mtetweaks.hazmat_charm_cost.name")
+    public static int hazmat_charm_cost = 100;
+
     @Comment("Tweak speed of harvesting IC2 machines with thermal wrench.")
     @LangKey("config.mtetweaks.cofh_wrench_on_ic2_machines.name")
     @RangeDouble(min=0.0001,max=10000.0)

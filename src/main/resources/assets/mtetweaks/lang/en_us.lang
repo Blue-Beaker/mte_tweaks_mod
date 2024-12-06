@@ -13,4 +13,4 @@ tile.mtetweaks.road_lamp_invert_lit.name=Road Lamp (Inverted)
 
 item.mtetweaks.hazmat_charm.name=Hazmat Charm
 item.mtetweaks.hazmat_charm.tip=Provides immunity to radiation
-item.mtetweaks.hazmat_charm.info=When in inventory, drain power for immunity to radiation from radioactive items. \nCost: 100EU/s\nWorks in baubles slot, but won't get charged there.
+item.mtetweaks.hazmat_charm.info=When in inventory, drain power for immunity to radiation from radioactive items. \nCost: %s EU/s\nWorks in baubles slot, but won't get charged there.
