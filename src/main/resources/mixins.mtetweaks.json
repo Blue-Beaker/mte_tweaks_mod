@@ -10,7 +10,6 @@
 		"MixinElectricArmor",
 		"MixinElectricTool",
 		"MixinJetpackLogic",
-		"MixinMassFabricator",
 		"MixinWindGenerator",
 		"MixinWindSim"
 	],
