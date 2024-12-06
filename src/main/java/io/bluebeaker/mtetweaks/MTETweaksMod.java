@@ -17,12 +17,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = MTETweaksMod.MODID, name = MTETweaksMod.NAME, version = MTETweaksMod.VERSION)
+@Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION)
 public class MTETweaksMod
 {
-    public static final String MODID = "mtetweaks";
-    public static final String NAME = "MTETweaksMod";
-    public static final String VERSION = "1.2";
+    public static final String MODID = Tags.MOD_ID;
+    public static final String NAME = Tags.MOD_NAME;
+    public static final String VERSION = Tags.VERSION;
     
     public MinecraftServer server;
 
@@ -30,8 +30,6 @@ public class MTETweaksMod
     
     public MTETweaksMod() {
         MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.register(WrenchTweaks.class);
-        MinecraftForge.EVENT_BUS.register(StartupTimer.class);
     }
     @EventHandler
     public void onServerStart(FMLServerStartingEvent event){
@@ -40,6 +38,8 @@ public class MTETweaksMod
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
         logger = event.getModLog();
+        MinecraftForge.EVENT_BUS.register(WrenchTweaks.class);
+        MinecraftForge.EVENT_BUS.register(StartupTimer.class);
     }
     @EventHandler
     public void onInit(FMLInitializationEvent event){

@@ -13,7 +13,7 @@ Features:
 - Make more blocks able to dismantle with wrench (configurable)  
 - Road bricks and lamps. Walk faster on it  
 
-With these tweaks you will found the immersive, classic and enjoyful experience in the modpack.
+With these tweaks you will found the immersive, classic and enjoyful experience in the modpack.  
 
 Tweaks to other mods in the pack may also be added in future.  
 New patches for mods will be added to [MTE Patches](https://www.curseforge.com/minecraft/mc-mods/mte-patches) instead.  
