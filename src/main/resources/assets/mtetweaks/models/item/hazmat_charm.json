@@ -2,5 +2,19 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "mtetweaks:items/hazmat_charm"
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "charged": 0
+      },
+      "model": "mtetweaks:item/hazmat_charm_off"
+    },
+    {
+      "predicate": {
+        "charged": 1
+      },
+      "model": "mtetweaks:item/hazmat_charm"
+    }
+  ]
 }

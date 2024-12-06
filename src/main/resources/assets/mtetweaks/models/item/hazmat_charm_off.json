@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mtetweaks:items/hazmat_charm_off"
+  }
+}

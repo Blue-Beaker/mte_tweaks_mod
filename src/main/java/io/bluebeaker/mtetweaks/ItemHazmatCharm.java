@@ -8,9 +8,12 @@ import ic2.core.item.IPseudoDamageItem;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemEnchantedBook;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -29,6 +32,15 @@ public class ItemHazmatCharm extends Item implements IPseudoDamageItem, IElectri
         this.setMaxDamage(27);
         this.setMaxStackSize(1);
         this.setNoRepair();
+        // Model for inactive charm (unpowered)
+        this.addPropertyOverride(new ResourceLocation("charged"), new IItemPropertyGetter()
+        {
+            @SideOnly(Side.CLIENT)
+            public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn)
+            {
+                return ItemHazmatCharm.this.canUse(stack)?1.0F:0.0F;
+            }
+        });
     }
 
     @Override
