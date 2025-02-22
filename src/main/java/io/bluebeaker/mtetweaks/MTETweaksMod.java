@@ -1,5 +1,8 @@
 package io.bluebeaker.mtetweaks;
 
+import io.bluebeaker.mtetweaks.blocks.MTETweaksBlocksRegistry;
+import io.bluebeaker.mtetweaks.items.HazmatCharmLogic;
+import io.bluebeaker.mtetweaks.items.MTETweaksItems;
 import io.bluebeaker.mtetweaks.launch.LaunchChecker;
 import io.bluebeaker.mtetweaks.launch.QuestScreenChecker;
 import net.minecraft.block.Block;
@@ -17,6 +20,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.event.FMLServerStoppingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION)
@@ -50,8 +54,10 @@ public class MTETweaksMod
         MinecraftForge.EVENT_BUS.register(StartupTimer.class);
         MinecraftForge.EVENT_BUS.register(MTETweaksItems.class);
         MinecraftForge.EVENT_BUS.register(HazmatCharmLogic.class);
-        MinecraftForge.EVENT_BUS.register(LaunchChecker.class);
-        MinecraftForge.EVENT_BUS.register(QuestScreenChecker.class);
+        if(event.getSide()== Side.CLIENT){
+            MinecraftForge.EVENT_BUS.register(LaunchChecker.class);
+            MinecraftForge.EVENT_BUS.register(QuestScreenChecker.class);
+        }
     }
     @EventHandler
     public void onInit(FMLInitializationEvent event){

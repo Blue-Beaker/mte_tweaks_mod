@@ -1,7 +1,7 @@
 package io.bluebeaker.mtetweaks.mixin;
 
 import ic2.core.item.armor.ItemArmorHazmat;
-import io.bluebeaker.mtetweaks.HazmatCharmLogic;
+import io.bluebeaker.mtetweaks.items.HazmatCharmLogic;
 import net.minecraft.entity.EntityLivingBase;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

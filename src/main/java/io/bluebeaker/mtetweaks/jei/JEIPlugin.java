@@ -1,14 +1,13 @@
 package io.bluebeaker.mtetweaks.jei;
 
-import io.bluebeaker.mtetweaks.ItemHazmatCharm;
-import io.bluebeaker.mtetweaks.MTETweaksItems;
+import io.bluebeaker.mtetweaks.items.ItemHazmatCharm;
+import io.bluebeaker.mtetweaks.items.MTETweaksItems;
 import mezz.jei.api.IJeiHelpers;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.ingredients.VanillaTypes;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.TextComponentTranslation;
 
 @mezz.jei.api.JEIPlugin
 public class JEIPlugin implements IModPlugin {

@@ -1,5 +1,6 @@
-package io.bluebeaker.mtetweaks;
+package io.bluebeaker.mtetweaks.blocks;
 
+import io.bluebeaker.mtetweaks.MTETweaksConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -16,7 +17,7 @@ public class BlockRoad extends Block {
         this.setHardness(1.5f);
         this.setResistance(10.0f);
         this.setHarvestLevel("pickaxe", -1);
-        this.setDefaultSlipperiness((float)(0.6/MTETweaksConfig.road_walk_speed));
+        this.setDefaultSlipperiness((float)(0.6/ MTETweaksConfig.road_walk_speed));
     }
 
     @Override

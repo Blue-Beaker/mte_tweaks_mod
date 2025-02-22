@@ -1,17 +1,16 @@
-package io.bluebeaker.mtetweaks;
+package io.bluebeaker.mtetweaks.items;
 
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import ic2.api.item.ElectricItem;
 import ic2.api.item.IElectricItem;
 import ic2.core.item.IPseudoDamageItem;
+import io.bluebeaker.mtetweaks.MTETweaksConfig;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemEnchantedBook;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextComponentTranslation;

@@ -1,4 +1,4 @@
-package io.bluebeaker.mtetweaks;
+package io.bluebeaker.mtetweaks.items;
 
 import cofh.core.util.helpers.BaublesHelper;
 import net.minecraft.entity.EntityLivingBase;

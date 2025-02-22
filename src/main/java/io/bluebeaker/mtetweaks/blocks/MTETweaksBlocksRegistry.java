@@ -1,5 +1,6 @@
-package io.bluebeaker.mtetweaks;
+package io.bluebeaker.mtetweaks.blocks;
 
+import io.bluebeaker.mtetweaks.MTETweaksMod;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
