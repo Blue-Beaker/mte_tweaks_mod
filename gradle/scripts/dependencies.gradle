@@ -42,7 +42,7 @@ dependencies {
 
     // For easier testing
     implementation rfg.deobf('curse.maven:had-enough-items-557549:4543375')
-    runtimeOnly rfg.deobf('curse.maven:ftb-library-legacy-forge-237167:2985811')
+    implementation rfg.deobf('curse.maven:ftb-library-legacy-forge-237167:2985811')
     runtimeOnly rfg.deobf('curse.maven:ftb-utilities-forge-237102:3157548')
     
     implementation rfg.deobf('industrialcraft-2:industrialcraft-2-2.8.222-ex112')
@@ -56,6 +56,9 @@ dependencies {
     implementation rfg.deobf('libs:ThermalExpansion-1.12.2-5.5.7.1-universal')
     implementation rfg.deobf('libs:ThermalFoundation-1.12.2-2.6.7.1-universal')
     implementation rfg.deobf('libs:CustomMainMenu-MC1.12.2-2.0.9.1')
+    
+    implementation rfg.deobf('curse.maven:item-filters-309674:3003364')
+    implementation rfg.deobf('curse.maven:ftb-quests-forge-289412:3156637')
 
     // Crafttweaker
     //implementation rfg.deobf("curse.maven:mtlib-253211:3308160")

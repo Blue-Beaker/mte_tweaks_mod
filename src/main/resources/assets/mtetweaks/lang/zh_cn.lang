@@ -1,3 +1,14 @@
+config.mtetweaks.windlessdims.name=无风维度
+config.mtetweaks.etool_attack_speed.name=电锯/电钻攻速
+config.mtetweaks.etool_attack_speed_2.name=其他电力工具攻速
+config.mtetweaks.etools_enchantable.name=使电力工具可附魔
+config.mtetweaks.road_walk_speed.name=铺路砖行走速度增幅
+config.mtetweaks.cofh_wrench_on_ic2_machines.name=CoFH扳手拆卸IC2机器速度
+config.mtetweaks.jetpack_boost_forward.name=喷气背包鞘翅加速
+config.mtetweaks.hazmat_charm_cost.name=防化护符消耗
+config.mtetweaks.wrenches.name=扳手
+config.mtetweaks.wrenchable_blocks.name=可用扳手拆卸的方块
+
 tile.mtetweaks.road_block.name=铺路砖
 tile.mtetweaks.road_lamp.name=铺路灯
 tile.mtetweaks.road_lamp_lit.name=铺路灯
@@ -7,3 +18,15 @@ tile.mtetweaks.road_lamp_invert_lit.name=反相铺路灯
 item.mtetweaks.hazmat_charm.name=防化护符
 item.mtetweaks.hazmat_charm.tip=提供辐射免疫
 item.mtetweaks.hazmat_charm.info=置于物品栏时, 消耗电量以免疫来自放射性物品的辐射. \n消耗: %s EU/s\n在饰品栏中也可工作, 但不会被充电
+
+mtepatches.questtoast.title=看看任务吧!
+mtepatches.questtoast.subtitle=按 '%s' 查看任务
+
+config.mtetweaks.launch.launch_message.name=首次启动消息
+config.mtetweaks.launch.always_show_launch_message.name=总是显示首次启动消息
+
+mtepatches.firstlaunch.continue=继续
+mtepatches.firstlaunch.default_title=§bMTE Tweaks 首次启动§r
+mtepatches.firstlaunch.default_l1=MTE Tweaks可以在整合包首次启动时显示信息.
+mtepatches.firstlaunch.default_l2=更改MTE Tweaks配置中的launch_message来更改此消息的内容!
+mtepatches.firstlaunch.default_l3=需使用§bJSON文本组件§r. 将配置项留空以关闭此屏幕.

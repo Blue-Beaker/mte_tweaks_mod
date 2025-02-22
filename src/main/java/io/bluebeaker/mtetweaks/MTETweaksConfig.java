@@ -47,4 +47,17 @@ public class MTETweaksConfig {
 
     public static boolean log_debug=false;
 
+    @Comment("Configurations related to first-launch options.")
+    public static Launch launch = new Launch();
+
+    public static class Launch{
+        @Comment({"JSON text to be used in first-launch message.","Leave empty to disable the feature."})
+        @LangKey("config.mtetweaks.launch.launch_message.name")
+        public String launch_message="{\"type\":\"translatable\",\"translate\":\"mtepatches.firstlaunch.default_title\",\"extra\":[{\"text\":\"\\n\\n\"},{\"type\":\"translatable\",\"translate\":\"mtepatches.firstlaunch.default_l1\"},{\"text\":\"\\n\"},{\"type\":\"translatable\",\"translate\":\"mtepatches.firstlaunch.default_l2\"},{\"text\":\"\\n\"},{\"type\":\"translatable\",\"translate\":\"mtepatches.firstlaunch.default_l3\"}]}";
+
+        @Comment({"Always show the first-launch message even it's not the first-launch. Useful when writing the message."})
+        @LangKey("config.mtetweaks.launch.always_show_launch_message.name")
+        public boolean always_show_launch_message=false;
+    }
+
 }

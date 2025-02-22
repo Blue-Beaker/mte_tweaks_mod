@@ -18,3 +18,15 @@ tile.mtetweaks.road_lamp_invert_lit.name=Road Lamp (Inverted)
 item.mtetweaks.hazmat_charm.name=Hazmat Charm
 item.mtetweaks.hazmat_charm.tip=Provides immunity to radiation
 item.mtetweaks.hazmat_charm.info=When in inventory, drain power for immunity to radiation from radioactive items. \nCost: %s EU/s\nWorks in baubles slot, but won't get charged there.
+
+mtepatches.questtoast.title=Check the Quests
+mtepatches.questtoast.subtitle=By pressing '%s'
+
+config.mtetweaks.launch.launch_message.name=First Launch Message
+config.mtetweaks.launch.always_show_launch_message.name=Always show the first launch message
+
+mtepatches.firstlaunch.continue=Continue
+mtepatches.firstlaunch.default_title=§bMTE Tweaks First Launch§r
+mtepatches.firstlaunch.default_l1=MTE Tweaks can show message on first starup of the modpack.
+mtepatches.firstlaunch.default_l2=Change launch_message in MTE Tweaks config to change this message!
+mtepatches.firstlaunch.default_l3=§bJSON text component§r should be used. Leave the config entry empty to disable this screen.
