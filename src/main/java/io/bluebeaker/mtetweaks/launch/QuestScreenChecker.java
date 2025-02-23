@@ -15,7 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class QuestScreenChecker {
     public static final Minecraft mc = Minecraft.getMinecraft();
-    public static QuestToast questToast = null;
+    public static QuestTutorialToast questTutorialToast = null;
     @SubscribeEvent
     public static void onScreenOpen(GuiOpenEvent event){
         GuiScreen gui = event.getGui();
@@ -35,9 +35,9 @@ public class QuestScreenChecker {
     }
 
     private static void closeQuestToast() {
-        if (questToast!=null) {
-            questToast.hide();
-            questToast = null;
+        if (questTutorialToast !=null) {
+            questTutorialToast.hide();
+            questTutorialToast = null;
         }
     }
 
@@ -47,9 +47,9 @@ public class QuestScreenChecker {
             closeQuestToast();
             return;
         }
-        if(!LaunchConfig.isQuestsOpened && questToast==null){
-            questToast=new QuestToast();
-            mc.getToastGui().add(questToast);
+        if(!LaunchConfig.isQuestsOpened && questTutorialToast ==null){
+            questTutorialToast =new QuestTutorialToast();
+            mc.getToastGui().add(questTutorialToast);
         }
         if(LaunchConfig.isQuestsOpened)
             closeQuestToast();
