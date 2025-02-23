@@ -19,7 +19,7 @@ item.mtetweaks.hazmat_charm.name=防化护符
 item.mtetweaks.hazmat_charm.tip=提供辐射免疫
 item.mtetweaks.hazmat_charm.info=置于物品栏时, 消耗电量以免疫来自放射性物品的辐射. \n消耗: %s EU/s\n在饰品栏中也可工作, 但不会被充电
 
-mtepatches.questtoast.title=看看任务吧!
+mtepatches.questtoast.title=检查任务
 mtepatches.questtoast.subtitle=按 '%s' 查看任务
 
 config.mtetweaks.launch.launch_message.name=首次启动消息

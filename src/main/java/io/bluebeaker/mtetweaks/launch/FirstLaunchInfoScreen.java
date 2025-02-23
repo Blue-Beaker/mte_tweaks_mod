@@ -40,11 +40,12 @@ public class FirstLaunchInfoScreen extends GuiScreen {
     {
         this.drawDefaultBackground();
         if(this.text!=null)
-            drawMultiLinedString(this,this.fontRenderer,this.text.getFormattedText(),this.width/2,60,16777215, this.width-30);
+            drawMultiLinedString(this,this.fontRenderer,this.text,this.width/2,60,16777215, this.width-30);
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 
-    public static void drawMultiLinedString(GuiScreen screen, FontRenderer font,String string, int x, int y, int color, int maxWidth){
+    public static void drawMultiLinedString(GuiScreen screen, FontRenderer font,ITextComponent text, int x, int y, int color, int maxWidth){
+        String string = text.getFormattedText();
         List<String> lines = new ArrayList<>();
         for(String line : string.split("\\n")){
             lines.addAll(
@@ -57,12 +58,8 @@ public class FirstLaunchInfoScreen extends GuiScreen {
         }
     }
 
-    protected void keyTyped(char typedChar, int keyCode) throws IOException
-    {
-    }
-
     protected void actionPerformed(GuiButton button) throws IOException
     {
-        this.mc.displayGuiScreen((GuiScreen)null);
+        this.mc.displayGuiScreen(null);
     }
 }
