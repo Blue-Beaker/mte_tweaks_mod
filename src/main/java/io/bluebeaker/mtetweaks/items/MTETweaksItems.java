@@ -13,9 +13,10 @@ public class MTETweaksItems {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(HAZMAT_CHARM);
-        ModelLoader.setCustomModelResourceLocation(HAZMAT_CHARM,0,new ModelResourceLocation(HAZMAT_CHARM.getRegistryName(),"inventory"));
+        if(!MTETweaksMod.isServer()){
+            ModelLoader.setCustomModelResourceLocation(HAZMAT_CHARM,0,new ModelResourceLocation(HAZMAT_CHARM.getRegistryName(),"inventory"));
+        }
     }
-
     private static Item addItem(Item item, String id){
         item.setRegistryName(MTETweaksMod.MODID,id);
         item.setTranslationKey(MTETweaksMod.MODID+"."+id);

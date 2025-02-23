@@ -16,6 +16,9 @@ public class MTETweaksBlocksRegistry {
     public static final Block ROAD_LAMP_LIT = addBlock(new BlockRoadLamp(true, false), "road_lamp_lit");
     public static final Block ROAD_LAMP_INVERT = addBlock(new BlockRoadLamp(false, true), "road_lamp_invert");
     public static final Block ROAD_LAMP_INVERT_LIT = addBlock(new BlockRoadLamp(true, true), "road_lamp_invert_lit");
+    public static final Item ROAD_BLOCK_ITEM=new ItemBlock(ROAD_BLOCK);
+    public static final Item ROAD_LAMP_ITEM=new ItemBlock(ROAD_LAMP);
+    public static final Item ROAD_LAMP_INVERT_ITEM=new ItemBlock(ROAD_LAMP_INVERT_LIT);
 
     public MTETweaksBlocksRegistry(RegistryEvent.Register<Block> event) {
         INSTANCE = this;
@@ -37,14 +40,17 @@ public class MTETweaksBlocksRegistry {
     }
 
     public void registerItems(RegistryEvent.Register<Item> event) {
-        Item ROAD_BLOCK_ITEM=new ItemBlock(ROAD_BLOCK).setRegistryName(ROAD_BLOCK.getRegistryName());
-        Item ROAD_LAMP_ITEM=new ItemBlock(ROAD_LAMP).setRegistryName(ROAD_LAMP.getRegistryName());
-        Item ROAD_LAMP_INVERT_ITEM=new ItemBlock(ROAD_LAMP_INVERT_LIT).setRegistryName(ROAD_LAMP_INVERT_LIT.getRegistryName());
-        ModelLoader.setCustomModelResourceLocation(ROAD_BLOCK_ITEM,0,new ModelResourceLocation(ROAD_BLOCK.getRegistryName(),"inventory"));
+        ROAD_BLOCK_ITEM.setRegistryName(ROAD_BLOCK.getRegistryName());
+        ROAD_LAMP_ITEM.setRegistryName(ROAD_LAMP.getRegistryName());
+        ROAD_LAMP_INVERT_ITEM.setRegistryName(ROAD_LAMP_INVERT_LIT.getRegistryName());
+
         event.getRegistry().register(ROAD_BLOCK_ITEM);
-        ModelLoader.setCustomModelResourceLocation(ROAD_LAMP_ITEM,0,new ModelResourceLocation(ROAD_LAMP.getRegistryName(),"inventory"));
         event.getRegistry().register(ROAD_LAMP_ITEM);
-        ModelLoader.setCustomModelResourceLocation(ROAD_LAMP_INVERT_ITEM,0,new ModelResourceLocation(ROAD_LAMP_INVERT_LIT.getRegistryName(),"inventory"));
         event.getRegistry().register(ROAD_LAMP_INVERT_ITEM);
+        if(!MTETweaksMod.isServer()){
+            ModelLoader.setCustomModelResourceLocation(ROAD_BLOCK_ITEM,0,new ModelResourceLocation(ROAD_BLOCK.getRegistryName(),"inventory"));
+            ModelLoader.setCustomModelResourceLocation(ROAD_LAMP_ITEM,0,new ModelResourceLocation(ROAD_LAMP.getRegistryName(),"inventory"));
+            ModelLoader.setCustomModelResourceLocation(ROAD_LAMP_INVERT_ITEM,0,new ModelResourceLocation(ROAD_LAMP_INVERT_LIT.getRegistryName(),"inventory"));
+        }
     }
 }

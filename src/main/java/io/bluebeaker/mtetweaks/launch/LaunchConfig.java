@@ -3,10 +3,7 @@ package io.bluebeaker.mtetweaks.launch;
 
 import io.bluebeaker.mtetweaks.MTETweaksMod;
 import net.minecraftforge.common.config.Config;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
-@SideOnly(Side.CLIENT)
 @Config(modid = MTETweaksMod.MODID, name = MTETweaksMod.MODID+"_launch",type = Config.Type.INSTANCE,category = "launch")
 public class LaunchConfig {
     @Config.Comment({

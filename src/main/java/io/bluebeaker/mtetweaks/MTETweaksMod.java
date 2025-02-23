@@ -33,10 +33,16 @@ public class MTETweaksMod
     public MinecraftServer server;
 
     private static Logger logger;
+    private static boolean isServer = false;
     
     public MTETweaksMod() {
         MinecraftForge.EVENT_BUS.register(this);
     }
+
+    public static boolean isServer() {
+        return isServer;
+    }
+
     @EventHandler
     public void onServerStart(FMLServerStartingEvent event){
         this.server=event.getServer();
@@ -51,12 +57,15 @@ public class MTETweaksMod
     public void preInit(FMLPreInitializationEvent event){
         logger = event.getModLog();
         MinecraftForge.EVENT_BUS.register(WrenchTweaks.class);
-        MinecraftForge.EVENT_BUS.register(StartupTimer.class);
         MinecraftForge.EVENT_BUS.register(MTETweaksItems.class);
         MinecraftForge.EVENT_BUS.register(HazmatCharmLogic.class);
         if(event.getSide()== Side.CLIENT){
+            MinecraftForge.EVENT_BUS.register(StartupTimer.class);
             MinecraftForge.EVENT_BUS.register(LaunchChecker.class);
             MinecraftForge.EVENT_BUS.register(QuestScreenChecker.class);
+        }
+        if(event.getSide()==Side.SERVER){
+            isServer =true;
         }
     }
     @EventHandler
