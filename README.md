@@ -12,8 +12,9 @@ Features:
 - Make thermal wrench dig IC2 machines faster  
 - Make more blocks able to dismantle with wrench (configurable)  
 - Road bricks and lamps. Walk faster on it  
-- First-Launch message
-- Inform players to open the quest book for quests, with a tutorial toast
+- First-Launch message  
+- Inform players to open the quest book for quests, with a tutorial toast  
+- Apply gamerules and commands when the world is created  
 
 With these tweaks you will found the immersive, classic and enjoyful experience in the modpack.  
 
