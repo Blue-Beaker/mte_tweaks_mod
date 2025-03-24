@@ -60,6 +60,15 @@ public class MTETweaksConfig {
         public boolean always_show_launch_message=false;
     }
 
-    public static String[] defaultGamerules = {};
+    public static WorldInit worldInit = new WorldInit();
+    public static class WorldInit {
+        @LangKey("config.mtetweaks.worldInit.defaultGamerules.name")
+        public String[] defaultGamerules = {};
+        @Comment({"Commands to be executed on world creation."})
+        @LangKey("config.mtetweaks.worldInit.initialCommands.name")
+        public String[] initialCommands = {};
+    }
+
+
 
 }

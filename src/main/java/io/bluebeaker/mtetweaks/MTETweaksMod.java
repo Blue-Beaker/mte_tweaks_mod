@@ -49,12 +49,19 @@ public class MTETweaksMod
         this.server=event.getServer();
         event.registerServerCommand(new MTETweaksCommand());
         WorldServer world = server.getWorld(0);
-        // Attempt to apply default gamerules
-        if(MTETweaksConfig.defaultGamerules.length==0) return;
+
+        if(MTETweaksConfig.worldInit.defaultGamerules.length==0 && MTETweaksConfig.worldInit.initialCommands.length==0) return;
         MTETweaksWorldData worldData = MTETweaksWorldData.get(world);
         if(worldData!=null){
             if(!worldData.isDefRulesApplied()){
-                GameRuleManager.mergeRules(world.getGameRules(), Arrays.asList(MTETweaksConfig.defaultGamerules));
+                // Attempt to apply default gamerules
+                GameRuleManager.mergeRules(world.getGameRules(), Arrays.asList(MTETweaksConfig.worldInit.defaultGamerules));
+
+                // Attempt to execute commands
+                for (String cmd : MTETweaksConfig.worldInit.initialCommands) {
+                    server.commandManager.executeCommand(server,cmd);
+                }
+
                 worldData.setDefRulesApplied(true);
             }
         }

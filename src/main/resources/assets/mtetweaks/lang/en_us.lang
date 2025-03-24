@@ -31,6 +31,10 @@ mtepatches.firstlaunch.default_l1=MTE Tweaks can show message on first starup of
 mtepatches.firstlaunch.default_l2=Change launch_message in MTE Tweaks config to change this message!
 mtepatches.firstlaunch.default_l3=§bJSON text component§r should be used. Leave the config entry empty to disable this screen.
 
+config.mtetweaks.worldInit.name=World Initialization
+config.mtetweaks.worldInit.defaultGamerules.name=Default Gamerules
+config.mtetweaks.worldInit.initialCommands.name=Initial Commands
+
 commands.mtetweaks.usage=Usage: /mtetweaks <subcommand>
 commands.mtetweaks.savegamerules.usage=Usage: /mtetweaks savegamerules
 commands.mtetweaks.savegamerules.feedback=Saved current gamerules as defaults to config.

@@ -19,7 +19,7 @@ public class GameRuleManager {
     }
     public static void writeToConfig(GameRules gameRules){
         List<String> rules = getGamerules(gameRules);
-        MTETweaksConfig.defaultGamerules = rules.toArray(new String[]{});
+        MTETweaksConfig.worldInit.defaultGamerules = rules.toArray(new String[]{});
         MTETweaksMod.saveConfigs();
     }
     public static GameRules mergeRules(GameRules rules, List<String> overrides){

@@ -75,7 +75,7 @@ public class MTETweaksCommand extends CommandTreeBase {
         @Override
         public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
             GameRules gameRules = server.getWorld(0).getGameRules();
-            GameRuleManager.mergeRules(gameRules, Arrays.asList(MTETweaksConfig.defaultGamerules));
+            GameRuleManager.mergeRules(gameRules, Arrays.asList(MTETweaksConfig.worldInit.defaultGamerules));
             notifyCommandListener(sender,this,0,"commands.mtetweaks.loadgamerules.feedback");
         }
     }

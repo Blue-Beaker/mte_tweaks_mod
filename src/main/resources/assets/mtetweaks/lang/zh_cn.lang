@@ -31,6 +31,10 @@ mtepatches.firstlaunch.default_l1=MTE Tweaks可以在整合包首次启动时显
 mtepatches.firstlaunch.default_l2=更改MTE Tweaks配置中的launch_message来更改此消息的内容!
 mtepatches.firstlaunch.default_l3=需使用§bJSON文本组件§r. 将配置项留空以关闭此屏幕.commands.mtetweaks.usage=Usage: /mtetweaks <subcommand>
 
+config.mtetweaks.worldInit.name=世界初始化
+config.mtetweaks.worldInit.defaultGamerules.name=默认Gamerules
+config.mtetweaks.worldInit.initialCommands.name=初始命令
+
 commands.mtetweaks.usage=用法: /mtetweaks <子命令>
 commands.mtetweaks.savegamerules.usage=用法: /mtetweaks savegamerules
 commands.mtetweaks.savegamerules.feedback=已将当前的gamerule作为默认值保存到配置中.
