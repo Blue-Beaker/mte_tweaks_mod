@@ -1,6 +1,7 @@
 package io.bluebeaker.mtetweaks;
 
 import io.bluebeaker.mtetweaks.blocks.MTETweaksBlocksRegistry;
+import io.bluebeaker.mtetweaks.defaultGameRule.GameRuleManager;
 import io.bluebeaker.mtetweaks.items.HazmatCharmLogic;
 import io.bluebeaker.mtetweaks.items.MTETweaksItems;
 import io.bluebeaker.mtetweaks.launch.LaunchChecker;
@@ -8,6 +9,7 @@ import io.bluebeaker.mtetweaks.launch.QuestScreenChecker;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Config.Type;
 import net.minecraftforge.common.config.ConfigManager;
@@ -15,13 +17,12 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent.OnConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.event.FMLServerStoppingEvent;
+import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.Logger;
+
+import java.util.Arrays;
 
 @Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION)
 public class MTETweaksMod
@@ -46,6 +47,17 @@ public class MTETweaksMod
     @EventHandler
     public void onServerStart(FMLServerStartingEvent event){
         this.server=event.getServer();
+        event.registerServerCommand(new MTETweaksCommand());
+        WorldServer world = server.getWorld(0);
+        // Attempt to apply default gamerules
+        if(MTETweaksConfig.defaultGamerules.length==0) return;
+        MTETweaksWorldData worldData = MTETweaksWorldData.get(world);
+        if(worldData!=null){
+            if(!worldData.isDefRulesApplied()){
+                GameRuleManager.mergeRules(world.getGameRules(), Arrays.asList(MTETweaksConfig.defaultGamerules));
+                worldData.setDefRulesApplied(true);
+            }
+        }
     }
 
     @EventHandler
@@ -87,6 +99,9 @@ public class MTETweaksMod
             ConfigManager.sync(MODID, Type.INSTANCE);
             ConfigHandler.loadConfig();
         }
+    }
+    public static void saveConfigs(){
+        ConfigManager.sync(MODID, Type.INSTANCE);
     }
     public static Logger getLogger(){
         return logger;

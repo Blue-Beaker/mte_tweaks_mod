@@ -60,4 +60,6 @@ public class MTETweaksConfig {
         public boolean always_show_launch_message=false;
     }
 
+    public static String[] defaultGamerules = {};
+
 }
