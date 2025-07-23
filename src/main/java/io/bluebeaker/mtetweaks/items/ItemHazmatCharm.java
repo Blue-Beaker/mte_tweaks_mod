@@ -15,14 +15,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
-
-@ParametersAreNonnullByDefault
+@Optional.Interface(iface = "baubles.api.IBauble", modid = "baubles")
 public class ItemHazmatCharm extends Item implements IPseudoDamageItem, IElectricItem, IBauble {
     public ItemHazmatCharm(){
         super();
@@ -95,7 +94,7 @@ public class ItemHazmatCharm extends Item implements IPseudoDamageItem, IElectri
     }
 
     @Override
-    public BaubleType getBaubleType(ItemStack itemStack) {
+    public BaubleType getBaubleType(ItemStack itemstack) {
         return BaubleType.TRINKET;
     }
 }
