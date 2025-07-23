@@ -18,3 +18,5 @@ New feature: A tutorial toast to let players open the quests menu
 Fixed crashing when loading on a dedicated server.  
 # 1.4.0
 Added default gamerules and initial commands feature  
+# 1.4.1
+Added more info when using IC2 cropnalyzer  

@@ -45,7 +45,7 @@ commands.mtetweaks.listgamerules.feedback=Current gamerules: %s
 commands.mtetweaks.loadgamerules.usage=Usage: /mtetweaks loadgamerules
 commands.mtetweaks.loadgamerules.feedback=Loaded default gamerules from config.
 
-message.mtetweaks.cropinfo.info=Environment quality: %s/%s (Humidity %s, Nutrients %s, Air Quality %s)
+message.mtetweaks.cropinfo.info=Environment quality: %s/%s (Humidity %s, Nutrients %s, Air %s)
 message.mtetweaks.cropinfo.modifier=Growth Speed: %sx
 message.mtetweaks.cropinfo.insufficient=Crop can't grow and can has a chance to die.
 
