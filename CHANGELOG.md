@@ -20,3 +20,6 @@ Fixed crashing when loading on a dedicated server.
 Added default gamerules and initial commands feature  
 # 1.4.1
 Added more info when using IC2 cropnalyzer  
+# 1.4.2
+Hazmat charm feature can be disabled  
+Fixed crash without baubles installed  
