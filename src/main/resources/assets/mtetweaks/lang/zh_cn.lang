@@ -1,13 +1,15 @@
-config.mtetweaks.windlessdims.name=无风维度
-config.mtetweaks.etool_attack_speed.name=电锯/电钻攻速
-config.mtetweaks.etool_attack_speed_2.name=其他电力工具攻速
-config.mtetweaks.etools_enchantable.name=使电力工具可附魔
 config.mtetweaks.road_walk_speed.name=铺路砖行走速度增幅
 config.mtetweaks.cofh_wrench_on_ic2_machines.name=CoFH扳手拆卸IC2机器速度
-config.mtetweaks.jetpack_boost_forward.name=喷气背包鞘翅加速
-config.mtetweaks.hazmat_charm_cost.name=防化护符消耗
 config.mtetweaks.wrenches.name=扳手
 config.mtetweaks.wrenchable_blocks.name=可用扳手拆卸的方块
+
+config.mtetweaks.ic2.windlessdims.name=无风维度
+config.mtetweaks.ic2.etool_attack_speed.name=电锯/电钻攻速
+config.mtetweaks.ic2.etool_attack_speed_2.name=其他电力工具攻速
+config.mtetweaks.ic2.etools_enchantable.name=使电力工具可附魔
+config.mtetweaks.ic2.jetpack_boost_forward.name=喷气背包鞘翅加速
+config.mtetweaks.ic2.hazmat_charm_cost.name=防化护符消耗
+config.mtetweaks.ic2.moreCropInfo.name=更多作物信息
 
 tile.mtetweaks.road_block.name=铺路砖
 tile.mtetweaks.road_lamp.name=铺路灯
@@ -41,4 +43,10 @@ commands.mtetweaks.savegamerules.feedback=已将当前的gamerule作为默认值
 commands.mtetweaks.listgamerules.usage=用法: /mtetweaks listgamerules
 commands.mtetweaks.listgamerules.feedback=当前的gamerule: %s
 commands.mtetweaks.loadgamerules.usage=用法: /mtetweaks loadgamerules
-commands.mtetweaks.loadgamerules.feedback=已从配置加载默认gamerules.
+commands.mtetweaks.loadgamerules.feedback=已从配置加载默认gamerules.config.mtetweaks.ic2.windlessdims.name=Windless Dimensions
+
+message.mtetweaks.cropinfo.info=环境质量: %s/%s (湿度 %s, 养分 %s, 空气质量 %s)
+message.mtetweaks.cropinfo.modifier=生长速率: %sx
+message.mtetweaks.cropinfo.insufficient=作物无法生长且有概率死亡.
+
+tip.mtetweaks.cropinfo.info=需要环境质量: %s

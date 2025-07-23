@@ -1,19 +1,20 @@
 {
-	"package": "io.bluebeaker.mtetweaks.mixin",
-	"required": false,
-	"refmap": "${mixin_refmap}",
-	"target": "@env(DEFAULT)",
-	"minVersion": "0.8.5",
-	"compatibilityLevel": "JAVA_8",
-	"mixins": [
-		"MixinCMMString",
-		"MixinElectricArmor",
-		"MixinElectricTool",
-		"MixinItemArmorHazmat",
-		"MixinJetpackLogic",
-		"MixinWindGenerator",
-		"MixinWindSim"
-	],
-	"server": [],
-	"client": []
+  "package": "io.bluebeaker.mtetweaks.mixin",
+  "required": false,
+  "refmap": "${mixin_refmap}",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8.5",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinCMMString",
+    "MixinElectricArmor",
+    "MixinElectricTool",
+    "MixinItemArmorHazmat",
+    "MixinItemCropnalyzer",
+    "MixinJetpackLogic",
+    "MixinWindGenerator",
+    "MixinWindSim"
+  ],
+  "server": [],
+  "client": []
 }

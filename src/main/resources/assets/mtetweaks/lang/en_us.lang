@@ -1,13 +1,15 @@
-config.mtetweaks.windlessdims.name=Windless Dimensions
-config.mtetweaks.etool_attack_speed.name=Chainsaw/Drill attack speed
-config.mtetweaks.etool_attack_speed_2.name=Other electric tools attack speed
-config.mtetweaks.etools_enchantable.name=Make electric tools enchantable
 config.mtetweaks.road_walk_speed.name=Walk speed multiplier for road blocks
 config.mtetweaks.cofh_wrench_on_ic2_machines.name=CoFH Wrench for IC2 speed
-config.mtetweaks.jetpack_boost_forward.name=Jetpack Elytra Boost
-config.mtetweaks.hazmat_charm_cost.name=Hazmat Charm Cost
 config.mtetweaks.wrenches.name=Wrenches
 config.mtetweaks.wrenchable_blocks.name=Wrenchable Blocks
+
+config.mtetweaks.ic2.windlessdims.name=Windless Dimensions
+config.mtetweaks.ic2.etool_attack_speed.name=Chainsaw/Drill attack speed
+config.mtetweaks.ic2.etool_attack_speed_2.name=Other electric tools attack speed
+config.mtetweaks.ic2.etools_enchantable.name=Make electric tools enchantable
+config.mtetweaks.ic2.jetpack_boost_forward.name=Jetpack Elytra Boost
+config.mtetweaks.ic2.hazmat_charm_cost.name=Hazmat Charm Cost
+config.mtetweaks.ic2.moreCropInfo.name=Additional Crop Info
 
 tile.mtetweaks.road_block.name=Road Bricks
 tile.mtetweaks.road_lamp.name=Road Lamp
@@ -42,3 +44,9 @@ commands.mtetweaks.listgamerules.usage=Usage: /mtetweaks listgamerules
 commands.mtetweaks.listgamerules.feedback=Current gamerules: %s
 commands.mtetweaks.loadgamerules.usage=Usage: /mtetweaks loadgamerules
 commands.mtetweaks.loadgamerules.feedback=Loaded default gamerules from config.
+
+message.mtetweaks.cropinfo.info=Environment quality: %s/%s (Humidity %s, Nutrients %s, Air Quality %s)
+message.mtetweaks.cropinfo.modifier=Growth Speed: %sx
+message.mtetweaks.cropinfo.insufficient=Crop can't grow and can has a chance to die.
+
+tip.mtetweaks.cropinfo.info=Environment quality requirement: %s (%s)

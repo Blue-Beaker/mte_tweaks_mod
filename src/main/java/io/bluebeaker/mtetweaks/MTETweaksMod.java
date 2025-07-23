@@ -1,6 +1,7 @@
 package io.bluebeaker.mtetweaks;
 
 import io.bluebeaker.mtetweaks.blocks.MTETweaksBlocksRegistry;
+import io.bluebeaker.mtetweaks.crop.CropInfoHandler;
 import io.bluebeaker.mtetweaks.defaultGameRule.GameRuleManager;
 import io.bluebeaker.mtetweaks.items.HazmatCharmLogic;
 import io.bluebeaker.mtetweaks.items.MTETweaksItems;
@@ -15,16 +16,20 @@ import net.minecraftforge.common.config.Config.Type;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent.OnConfigChangedEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.event.FMLServerStoppingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
-@Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION)
+@Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION, acceptableRemoteVersions = Tags.ACCEPTABLE_VERSIONS)
 public class MTETweaksMod
 {
     public static final String MODID = Tags.MOD_ID;
@@ -75,9 +80,12 @@ public class MTETweaksMod
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
         logger = event.getModLog();
-        MinecraftForge.EVENT_BUS.register(WrenchTweaks.class);
-        MinecraftForge.EVENT_BUS.register(MTETweaksItems.class);
-        MinecraftForge.EVENT_BUS.register(HazmatCharmLogic.class);
+        if(Loader.isModLoaded("ic2")){
+            MinecraftForge.EVENT_BUS.register(CropInfoHandler.class);
+            MinecraftForge.EVENT_BUS.register(WrenchTweaks.class);
+            MinecraftForge.EVENT_BUS.register(MTETweaksItems.class);
+            MinecraftForge.EVENT_BUS.register(HazmatCharmLogic.class);
+        }
         if(event.getSide()== Side.CLIENT){
             MinecraftForge.EVENT_BUS.register(StartupTimer.class);
             MinecraftForge.EVENT_BUS.register(LaunchChecker.class);
