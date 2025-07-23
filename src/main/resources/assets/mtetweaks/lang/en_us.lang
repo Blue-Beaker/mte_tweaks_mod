@@ -9,6 +9,7 @@ config.mtetweaks.ic2.etool_attack_speed_2.name=Other electric tools attack speed
 config.mtetweaks.ic2.etools_enchantable.name=Make electric tools enchantable
 config.mtetweaks.ic2.jetpack_boost_forward.name=Jetpack Elytra Boost
 config.mtetweaks.ic2.hazmat_charm_cost.name=Hazmat Charm Cost
+config.mtetweaks.ic2.hazmat_charm.name=Hazmat Charm
 config.mtetweaks.ic2.moreCropInfo.name=Additional Crop Info
 
 tile.mtetweaks.road_block.name=Road Bricks

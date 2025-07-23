@@ -84,7 +84,8 @@ public class MTETweaksMod
             MinecraftForge.EVENT_BUS.register(CropInfoHandler.class);
             MinecraftForge.EVENT_BUS.register(WrenchTweaks.class);
             MinecraftForge.EVENT_BUS.register(MTETweaksItems.class);
-            MinecraftForge.EVENT_BUS.register(HazmatCharmLogic.class);
+            if(MTETweaksConfig.ic2.hazmat_charm)
+                MinecraftForge.EVENT_BUS.register(HazmatCharmLogic.class);
         }
         if(event.getSide()== Side.CLIENT){
             MinecraftForge.EVENT_BUS.register(StartupTimer.class);

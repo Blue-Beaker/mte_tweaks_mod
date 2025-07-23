@@ -55,6 +55,10 @@ public class MTETweaksConfig {
         @Comment("Print additional growth-related crop info when using cropnalyzer.")
         @LangKey("config.mtetweaks.ic2.moreCropInfo.name")
         public boolean moreCropInfo=true;
+
+        @Comment("Add the hazmat charm, which can prevent radiation without hazmat suit, at cost of energy.")
+        @LangKey("config.mtetweaks.ic2.hazmat_charm.name")
+        public boolean hazmat_charm=true;
     }
 
     @Comment("Configurations related to first-launch options.")
