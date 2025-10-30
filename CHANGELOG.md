@@ -23,3 +23,5 @@ Added more info when using IC2 cropnalyzer
 # 1.4.2
 Hazmat charm feature can be disabled  
 Fixed crash without baubles installed  
+# 1.4.3
+Add disable jetpack when creative-flying  
