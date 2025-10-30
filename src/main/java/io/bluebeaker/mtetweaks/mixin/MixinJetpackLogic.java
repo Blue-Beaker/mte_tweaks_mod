@@ -1,5 +1,6 @@
 package io.bluebeaker.mtetweaks.mixin;
 
+import io.bluebeaker.mtetweaks.mixin_core.AccessorEntityLivingBase;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -17,7 +18,11 @@ import net.minecraft.util.math.Vec3d;
 public class MixinJetpackLogic {
     @Inject(method = "useJetpack",at = @At(value = "FIELD",target="Lnet/minecraft/entity/player/EntityPlayer;field_70181_x:D"),cancellable = true)
     private static void useJetpackOnElytra(EntityPlayer player, boolean hoverMode, IJetpack jetpack, ItemStack stack,CallbackInfoReturnable<Boolean> cir){
-        if(hoverMode || MTETweaksConfig.jetpack_elytra_boost<=0){
+        if(MTETweaksConfig.jetpack_elytra_boost<=0){
+            return;
+        }
+        if(hoverMode){
+            ((AccessorEntityLivingBase)player).invokeSetFlag(7,false);
             return;
         }
         if(player.isElytraFlying() && IC2.keyboard.isForwardKeyDown(player)){
