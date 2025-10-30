@@ -22,7 +22,9 @@ public class MixinJetpackLogic {
             return;
         }
         if(hoverMode){
-            ((AccessorEntityLivingBase)player).invokeSetFlag(7,false);
+            if(MTETweaksConfig.ic2.stop_elytra_hover) {
+                ((AccessorEntityLivingBase)player).invokeSetFlag(7,false);
+            }
             return;
         }
         if(player.isElytraFlying() && IC2.keyboard.isForwardKeyDown(player)){

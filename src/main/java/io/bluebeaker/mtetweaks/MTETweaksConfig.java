@@ -62,6 +62,9 @@ public class MTETweaksConfig {
 
         @Comment("Disable jetpack when creative-type flying.")
         public boolean disable_jetpack_flying=true;
+
+        @Comment("Stops elytra flying when hovering with jetpack.")
+        public boolean stop_elytra_hover=true;
     }
 
     @Comment("Configurations related to first-launch options.")
