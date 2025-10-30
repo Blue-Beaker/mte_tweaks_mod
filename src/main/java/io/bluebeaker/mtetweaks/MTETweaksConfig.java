@@ -59,6 +59,9 @@ public class MTETweaksConfig {
         @Comment("Add the hazmat charm, which can prevent radiation without hazmat suit, at cost of energy.")
         @LangKey("config.mtetweaks.ic2.hazmat_charm.name")
         public boolean hazmat_charm=true;
+
+        @Comment("Disable jetpack when creative-type flying.")
+        public boolean disable_jetpack_flying=true;
     }
 
     @Comment("Configurations related to first-launch options.")
