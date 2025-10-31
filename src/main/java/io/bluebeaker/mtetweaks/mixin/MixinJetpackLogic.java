@@ -38,7 +38,7 @@ public class MixinJetpackLogic {
     }
     @Inject(method = "useJetpack",at = @At("HEAD"), cancellable = true)
     private static void cancelJetpackOnFlying(EntityPlayer player, boolean hoverMode, IJetpack jetpack, ItemStack stack, CallbackInfoReturnable<Boolean> cir){
-        if(MTETweaksConfig.ic2.disable_jetpack_flying && player.capabilities.isFlying) {
+        if(MTETweaksConfig.ic2.disable_jetpack_creative_flying && player.capabilities.isFlying) {
             cir.setReturnValue(false);
         }
     }

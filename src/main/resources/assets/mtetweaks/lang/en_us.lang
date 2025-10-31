@@ -11,6 +11,8 @@ config.mtetweaks.ic2.jetpack_boost_forward.name=Jetpack Elytra Boost
 config.mtetweaks.ic2.hazmat_charm_cost.name=Hazmat Charm Cost
 config.mtetweaks.ic2.hazmat_charm.name=Hazmat Charm
 config.mtetweaks.ic2.moreCropInfo.name=Additional Crop Info
+config.mtetweaks.ic2.disable_jetpack_creative_flying.name=Disable jetpack on creative flying
+config.mtetweaks.ic2.stop_elytra_hover.name=Stop elytra when hovering
 
 tile.mtetweaks.road_block.name=Road Bricks
 tile.mtetweaks.road_lamp.name=Road Lamp

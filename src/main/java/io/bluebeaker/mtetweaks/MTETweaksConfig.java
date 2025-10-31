@@ -61,9 +61,11 @@ public class MTETweaksConfig {
         public boolean hazmat_charm=true;
 
         @Comment("Disable jetpack when creative-type flying.")
-        public boolean disable_jetpack_flying=true;
+        @LangKey("config.mtetweaks.ic2.disable_jetpack_creative_flying.name")
+        public boolean disable_jetpack_creative_flying =true;
 
         @Comment("Stops elytra flying when hovering with jetpack.")
+        @LangKey("config.mtetweaks.ic2.stop_elytra_hover.name")
         public boolean stop_elytra_hover=true;
     }
 
