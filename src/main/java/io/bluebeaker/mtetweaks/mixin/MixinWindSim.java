@@ -1,5 +1,6 @@
 package io.bluebeaker.mtetweaks.mixin;
 
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,6 +20,7 @@ public class MixinWindSim {
             cir.setReturnValue(0.0d);
         }
     }
+    @Final
     @Shadow(remap = false)
-    World world;
+    private World world;
 }

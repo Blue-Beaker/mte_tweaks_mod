@@ -13,7 +13,8 @@ import net.minecraft.item.ItemStack;
 public class MixinElectricArmor {
     @Inject(method = "isBookEnchantable(Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)Z",at = @At("RETURN"),remap = false,cancellable = true)
     public void isBookEnchantable(ItemStack stack, ItemStack book,CallbackInfoReturnable<Boolean> cir){
-        if(MTETweaksConfig.etools_enchantable)
-        cir.setReturnValue(true);
+        if(MTETweaksConfig.etools_enchantable) {
+            cir.setReturnValue(true);
+        }
     }
 }

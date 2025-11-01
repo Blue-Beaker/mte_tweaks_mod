@@ -15,5 +15,5 @@ public class MixinWindGenerator {
         this.ticker=127;
     }
     @Shadow(remap = false)
-    int ticker;
+    private int ticker;
 }
