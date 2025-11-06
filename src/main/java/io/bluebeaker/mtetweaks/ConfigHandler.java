@@ -1,12 +1,9 @@
 package io.bluebeaker.mtetweaks;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
+import io.bluebeaker.mtetweaks.heatsink.HeatSinkHandler;
 import net.minecraft.util.ResourceLocation;
+
+import java.util.*;
 
 public class ConfigHandler {
     public static Set<Integer> windlessDims = new HashSet<Integer>();
@@ -57,6 +54,8 @@ public class ConfigHandler {
             MTETweaksMod.getLogger().info("Wrenches:" + wrenches.toString());
             MTETweaksMod.getLogger().info("Wrenchables:" + wrenchableBlocks.toString());
         }
+
+        HeatSinkHandler.updateConfig();
     }
 
 }

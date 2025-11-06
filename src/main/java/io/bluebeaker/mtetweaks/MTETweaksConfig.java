@@ -69,6 +69,14 @@ public class MTETweaksConfig {
         public boolean stop_elytra_hover=true;
     }
 
+    public static Thermal thermal = new Thermal();
+    public static class Thermal{
+        @Comment({"Additional tiles to be accelerated by Thermal Mediator.",
+                "Format: modid:tile_id=cost/mode"})
+        @LangKey("config.mtetweaks.acceleratableTiles.name")
+        public String[] acceleratableTiles ={};
+    }
+
     @Comment("Configurations related to first-launch options.")
     public static Launch launch = new Launch();
 

@@ -55,10 +55,14 @@ dependencies {
     implementation rfg.deobf('libs:RedstoneFlux-1.12-2.1.1.1-universal')
     implementation rfg.deobf('libs:ThermalExpansion-1.12.2-5.5.7.1-universal')
     implementation rfg.deobf('libs:ThermalFoundation-1.12.2-2.6.7.1-universal')
-    implementation rfg.deobf('libs:CustomMainMenu-MC1.12.2-2.0.9.1')
-    
-    implementation rfg.deobf('curse.maven:item-filters-309674:3003364')
-    implementation rfg.deobf('curse.maven:ftb-quests-forge-289412:3156637')
+
+    compileOnly rfg.deobf('libs:CustomMainMenu-MC1.12.2-2.0.9.1')
+
+    compileOnly rfg.deobf('curse.maven:item-filters-309674:3003364')
+    compileOnly rfg.deobf('curse.maven:ftb-quests-forge-289412:3156637')
+
+    implementation rfg.deobf('libs:forestry_1.12.2-5.8.2.426')
+    implementation rfg.deobf('libs:buildcraft-all-8.0.0')
 
     // Crafttweaker
     //implementation rfg.deobf("curse.maven:mtlib-253211:3308160")

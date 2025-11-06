@@ -12,6 +12,7 @@
     "MixinItemArmorHazmat",
     "MixinItemCropnalyzer",
     "MixinJetpackLogic",
+    "MixinTileHeatSink",
     "MixinWindGenerator",
     "MixinWindSim"
   ],
