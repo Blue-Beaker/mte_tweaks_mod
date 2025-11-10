@@ -17,15 +17,13 @@ public class HeatSinkHandler {
             if(split.length<2) continue;
             try {
                 ResourceLocation res = new ResourceLocation(split[0]);
-
-                int cost = Integer.parseInt(split[1]);
-
-                handlers.put(res,new BasicAccelerableHandler(cost));
+                handlers.put(res,AccelerableHandlerBuilders.getForName(split[1]));
             } catch (Exception e) {
                 MTETweaksMod.getLogger().info("Exception loading acceleratableTiles entry:",e);
             }
         }
     }
+
     @Nullable
     public static IAccelerableHandler getHandlerFor(TileEntity tile){
         ResourceLocation key = TileEntity.getKey(tile.getClass());
