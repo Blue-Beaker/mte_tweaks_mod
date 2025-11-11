@@ -25,4 +25,5 @@ Hazmat charm feature can be disabled
 Fixed crash without baubles installed  
 # 1.4.3
 Add disable jetpack when creative-flying  
-Add stop elytra on jetpack hover
+Add stop elytra on jetpack hover  
+New feature: Additional Acceleratable Tiles, let more tiles to be accelerated by Thermal's Thermal Mediator  

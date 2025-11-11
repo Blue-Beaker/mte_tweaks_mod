@@ -15,6 +15,13 @@ Features:
 - First-Launch message  
 - Inform players to open the quest book for quests, with a tutorial toast  
 - Apply gamerules and commands when the world is created  
+- Additional Acceleratable Tiles
+  - Let more tiles to be accelerated by Thermal's Thermal Mediator
+  - Different cost handlers
+      - `BASIC` Constant cost of coolant
+      - `DUMMY` No effect, used for debug
+      - `RF` Cost based on consumed RF
+      - `MJ` Cost based on consumed MJ
 
 With these tweaks you will found the immersive, classic and enjoyful experience in the modpack.  
 
