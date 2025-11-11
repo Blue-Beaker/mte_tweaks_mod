@@ -8,6 +8,7 @@ Features:
 - Revert enchantability of IC2 electric equipments to 1.7-like: no enchanting table, but anvil is ok.  
 - Patched IC2 mass fabricator (old UU) to prevent stucking forever at 100% scrap.  
 - With IC2 jetpack and Elytra equipped: hold jump+forward to boost forward, like using a firework rocket.  
+- Disable IC2 jetpack when creative flying, and stop elytra when jetpack is hovering  
 - Add support for startup time string to CustomMainMenu mod: `#startuptime#`  
 - Make thermal wrench dig IC2 machines faster  
 - Make more blocks able to dismantle with wrench (configurable)  
