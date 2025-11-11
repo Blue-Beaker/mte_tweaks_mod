@@ -19,7 +19,7 @@ Features:
 - Additional Acceleratable Tiles
   - Let more tiles to be accelerated by Thermal's Thermal Mediator
   - Different cost handlers
-      - `BASIC` Constant cost of coolant
+      - `BASIC` Constant cost of coolant. For example `BASIC:10` costs a constant of 10 coolant/tick.  
       - `DUMMY` No effect, used for debug
       - `RF` Cost based on consumed RF
       - `MJ` Cost based on consumed MJ
