@@ -74,11 +74,14 @@ public class MTETweaksConfig {
         @Comment({"Additional tiles to be accelerated by Thermal Mediator.",
                 "Format: modid:tile_id=HANDLER[:params]",
                 "HANDLER can be BASIC, DUMMY, RF, or MJ (when BuildCraft is present)"})
-        @LangKey("config.mtetweaks.acceleratableTiles.name")
-        public String[] acceleratableTiles ={};
+        @LangKey("config.mtetweaks.thermal.acceleratableTiles.name")
+        public String[] acceleratableTiles ={
+            "buildcraftsilicon:laser=MJ",
+            "forestry:carpenter=RF"
+        };
 
         @Comment({"Acceleration cost per MJ"})
-        @LangKey("config.mtetweaks.accelCostPerMJ.name")
+        @LangKey("config.mtetweaks.thermal.accelCostPerMJ.name")
         public float accelCostPerMJ = 10;
     }
 
