@@ -18,7 +18,10 @@ public class HeatSinkHandler {
             if(split.length<2) continue;
             try {
                 ResourceLocation res = new ResourceLocation(split[0]);
-                handlers.put(res,AccelerableHandlerBuilders.getForName(split[1]));
+                IAccelerableHandler handler = AccelerableHandlerBuilders.getForName(split[1]);
+                if(handler!=null) {
+                    handlers.put(res, handler);
+                }
             } catch (Exception e) {
                 MTETweaksMod.getLogger().info("Exception loading acceleratableTiles entry:",e);
             }

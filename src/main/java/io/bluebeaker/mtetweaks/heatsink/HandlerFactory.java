@@ -1,5 +1,7 @@
 package io.bluebeaker.mtetweaks.heatsink;
 
-public interface HandlerFactory<T> {
+import io.bluebeaker.mtetweaks.heatsink.handlers.IAccelerableHandler;
+
+public interface HandlerFactory<T extends IAccelerableHandler> {
     T build(String str);
 }

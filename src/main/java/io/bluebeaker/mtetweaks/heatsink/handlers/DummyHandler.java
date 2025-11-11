@@ -8,11 +8,12 @@ public class DummyHandler implements IAccelerableHandler {
     public int updateAccelerable(TileEntity tile) {
         return 0;
     }
+    public static final DummyHandler INSTANCE = new DummyHandler();
 
     public static class Factory implements HandlerFactory<DummyHandler> {
         @Override
         public DummyHandler build(String str) {
-            return new DummyHandler();
+            return INSTANCE;
         }
     }
 }

@@ -72,7 +72,8 @@ public class MTETweaksConfig {
     public static Thermal thermal = new Thermal();
     public static class Thermal{
         @Comment({"Additional tiles to be accelerated by Thermal Mediator.",
-                "Format: modid:tile_id=cost/mode"})
+                "Format: modid:tile_id=HANDLER[:params]",
+                "HANDLER can be BASIC, DUMMY or FORESTRY(if loaded)"})
         @LangKey("config.mtetweaks.acceleratableTiles.name")
         public String[] acceleratableTiles ={};
     }

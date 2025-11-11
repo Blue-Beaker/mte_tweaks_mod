@@ -1,6 +1,5 @@
 package io.bluebeaker.mtetweaks;
 
-import io.bluebeaker.mtetweaks.heatsink.HeatSinkHandler;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.*;
@@ -54,8 +53,6 @@ public class ConfigHandler {
             MTETweaksMod.getLogger().info("Wrenches:" + wrenches.toString());
             MTETweaksMod.getLogger().info("Wrenchables:" + wrenchableBlocks.toString());
         }
-
-        HeatSinkHandler.updateConfig();
     }
 
 }

@@ -4,6 +4,7 @@ import io.bluebeaker.mtetweaks.blocks.MTETweaksBlocksRegistry;
 import io.bluebeaker.mtetweaks.crop.CropInfoHandler;
 import io.bluebeaker.mtetweaks.defaultGameRule.GameRuleManager;
 import io.bluebeaker.mtetweaks.heatsink.AccelerableHandlerBuilders;
+import io.bluebeaker.mtetweaks.heatsink.HeatSinkHandler;
 import io.bluebeaker.mtetweaks.items.HazmatCharmLogic;
 import io.bluebeaker.mtetweaks.items.MTETweaksItems;
 import io.bluebeaker.mtetweaks.launch.LaunchChecker;
@@ -97,10 +98,15 @@ public class MTETweaksMod
     @EventHandler
     public void onInit(FMLInitializationEvent event){
         ConfigHandler.loadConfig();
+        if(ModChecker.thermalexpansion.isLoaded()) {
+            AccelerableHandlerBuilders.init();
+        }
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent event){
-        AccelerableHandlerBuilders.init();
+        if(ModChecker.thermalexpansion.isLoaded()) {
+            HeatSinkHandler.updateConfig();
+        }
     }
     @SubscribeEvent
     public void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -116,6 +122,9 @@ public class MTETweaksMod
         if (event.getModID().equals(MODID)) {
             ConfigManager.sync(MODID, Type.INSTANCE);
             ConfigHandler.loadConfig();
+            if(ModChecker.thermalexpansion.isLoaded()) {
+                HeatSinkHandler.updateConfig();
+            }
         }
     }
     public static void saveConfigs(){
