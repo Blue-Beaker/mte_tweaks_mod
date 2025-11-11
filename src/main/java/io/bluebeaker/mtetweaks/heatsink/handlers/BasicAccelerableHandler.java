@@ -1,6 +1,7 @@
-package io.bluebeaker.mtetweaks.heatsink;
+package io.bluebeaker.mtetweaks.heatsink.handlers;
 
 import io.bluebeaker.mtetweaks.MTETweaksMod;
+import io.bluebeaker.mtetweaks.heatsink.HandlerFactory;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 
@@ -18,7 +19,7 @@ public class BasicAccelerableHandler implements IAccelerableHandler {
         return cost;
     }
 
-    public static class Factory implements HandlerFactory<BasicAccelerableHandler>{
+    public static class Factory implements HandlerFactory<BasicAccelerableHandler> {
         @Override
         public BasicAccelerableHandler build(String str) {
             int cost=0;

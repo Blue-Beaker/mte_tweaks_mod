@@ -2,6 +2,7 @@ package io.bluebeaker.mtetweaks.heatsink;
 
 import io.bluebeaker.mtetweaks.MTETweaksConfig;
 import io.bluebeaker.mtetweaks.MTETweaksMod;
+import io.bluebeaker.mtetweaks.heatsink.handlers.IAccelerableHandler;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 
@@ -10,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HeatSinkHandler {
-    public static Map<ResourceLocation,IAccelerableHandler> handlers = new HashMap<>();
+    public static Map<ResourceLocation, IAccelerableHandler> handlers = new HashMap<>();
     public static void updateConfig(){
         for (String acceleratableTile : MTETweaksConfig.thermal.acceleratableTiles) {
             String[] split = acceleratableTile.split("=", 2);

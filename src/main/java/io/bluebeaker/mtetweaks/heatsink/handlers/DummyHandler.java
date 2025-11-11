@@ -1,14 +1,15 @@
-package io.bluebeaker.mtetweaks.heatsink;
+package io.bluebeaker.mtetweaks.heatsink.handlers;
 
+import io.bluebeaker.mtetweaks.heatsink.HandlerFactory;
 import net.minecraft.tileentity.TileEntity;
 
-public class DummyHandler implements IAccelerableHandler{
+public class DummyHandler implements IAccelerableHandler {
     @Override
     public int updateAccelerable(TileEntity tile) {
         return 0;
     }
 
-    public static class Factory implements HandlerFactory<DummyHandler>{
+    public static class Factory implements HandlerFactory<DummyHandler> {
         @Override
         public DummyHandler build(String str) {
             return new DummyHandler();

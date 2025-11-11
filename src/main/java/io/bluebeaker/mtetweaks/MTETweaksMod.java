@@ -3,6 +3,7 @@ package io.bluebeaker.mtetweaks;
 import io.bluebeaker.mtetweaks.blocks.MTETweaksBlocksRegistry;
 import io.bluebeaker.mtetweaks.crop.CropInfoHandler;
 import io.bluebeaker.mtetweaks.defaultGameRule.GameRuleManager;
+import io.bluebeaker.mtetweaks.heatsink.AccelerableHandlerBuilders;
 import io.bluebeaker.mtetweaks.items.HazmatCharmLogic;
 import io.bluebeaker.mtetweaks.items.MTETweaksItems;
 import io.bluebeaker.mtetweaks.launch.LaunchChecker;
@@ -19,10 +20,7 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent.OnConfigChangedEve
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.event.FMLServerStoppingEvent;
+import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.Logger;
@@ -99,6 +97,10 @@ public class MTETweaksMod
     @EventHandler
     public void onInit(FMLInitializationEvent event){
         ConfigHandler.loadConfig();
+    }
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event){
+        AccelerableHandlerBuilders.init();
     }
     @SubscribeEvent
     public void registerBlocks(RegistryEvent.Register<Block> event) {

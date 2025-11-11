@@ -4,7 +4,7 @@ import cofh.core.util.helpers.BlockHelper;
 import cofh.thermalexpansion.block.device.TileDeviceBase;
 import cofh.thermalexpansion.block.device.TileHeatSink;
 import io.bluebeaker.mtetweaks.heatsink.HeatSinkHandler;
-import io.bluebeaker.mtetweaks.heatsink.IAccelerableHandler;
+import io.bluebeaker.mtetweaks.heatsink.handlers.IAccelerableHandler;
 import net.minecraft.tileentity.TileEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

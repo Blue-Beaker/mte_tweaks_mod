@@ -1,4 +1,4 @@
-package io.bluebeaker.mtetweaks.heatsink;
+package io.bluebeaker.mtetweaks.heatsink.handlers;
 
 import net.minecraft.tileentity.TileEntity;
 
