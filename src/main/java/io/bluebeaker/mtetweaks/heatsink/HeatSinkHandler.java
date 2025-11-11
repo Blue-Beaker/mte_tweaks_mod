@@ -28,6 +28,10 @@ public class HeatSinkHandler {
         }
     }
 
+    /**
+     * @param tile TileEntity to check handler for
+     * @return The handler bound to the TileEntity, or null if not bound
+     */
     @Nullable
     public static IAccelerableHandler getHandlerFor(TileEntity tile){
         ResourceLocation key = TileEntity.getKey(tile.getClass());

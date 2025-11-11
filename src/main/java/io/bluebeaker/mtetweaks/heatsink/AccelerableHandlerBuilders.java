@@ -2,9 +2,7 @@ package io.bluebeaker.mtetweaks.heatsink;
 
 import io.bluebeaker.mtetweaks.MTETweaksMod;
 import io.bluebeaker.mtetweaks.ModChecker;
-import io.bluebeaker.mtetweaks.heatsink.handlers.BasicAccelerableHandler;
-import io.bluebeaker.mtetweaks.heatsink.handlers.DummyHandler;
-import io.bluebeaker.mtetweaks.heatsink.handlers.IAccelerableHandler;
+import io.bluebeaker.mtetweaks.heatsink.handlers.*;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
@@ -13,14 +11,19 @@ import java.util.Map;
 public class AccelerableHandlerBuilders {
     public static final BasicAccelerableHandler.Factory BASIC = new BasicAccelerableHandler.Factory();
     public static final DummyHandler.Factory DUMMY = new DummyHandler.Factory();
+    public static final RedstoneFluxHandler.Factory RF = new RedstoneFluxHandler.Factory();
 
     private static final Map<String, HandlerFactory<?>> builders = new HashMap<>();
 
     public static void init(){
         add(HandlerIDs.BASIC,BASIC);
         add(HandlerIDs.DUMMY,DUMMY);
+        add(HandlerIDs.RF,RF);
         if(ModChecker.forestry.isLoaded()){
             ForestryPlugin.init();
+        }
+        if(ModChecker.buildcraftcore.isLoaded()){
+            BuildCraftPlugin.init();
         }
     }
 

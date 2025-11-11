@@ -73,9 +73,13 @@ public class MTETweaksConfig {
     public static class Thermal{
         @Comment({"Additional tiles to be accelerated by Thermal Mediator.",
                 "Format: modid:tile_id=HANDLER[:params]",
-                "HANDLER can be BASIC, DUMMY or FORESTRY(if loaded)"})
+                "HANDLER can be BASIC, DUMMY or FORESTRY, BUILDCRAFT(when those mods are loaded)"})
         @LangKey("config.mtetweaks.acceleratableTiles.name")
         public String[] acceleratableTiles ={};
+
+        @Comment({"Acceleration cost per MJ"})
+        @LangKey("config.mtetweaks.accelCostPerMJ.name")
+        public float accelCostPerMJ = 10;
     }
 
     @Comment("Configurations related to first-launch options.")
