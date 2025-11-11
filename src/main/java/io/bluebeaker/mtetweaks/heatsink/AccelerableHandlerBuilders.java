@@ -19,9 +19,6 @@ public class AccelerableHandlerBuilders {
         add(HandlerIDs.BASIC,BASIC);
         add(HandlerIDs.DUMMY,DUMMY);
         add(HandlerIDs.RF,RF);
-        if(ModChecker.forestry.isLoaded()){
-            ForestryPlugin.init();
-        }
         if(ModChecker.buildcraftcore.isLoaded()){
             BuildCraftPlugin.init();
         }

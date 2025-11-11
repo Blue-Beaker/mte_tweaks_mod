@@ -5,6 +5,6 @@ import io.bluebeaker.mtetweaks.heatsink.HandlerIDs;
 
 public class BuildCraftPlugin {
     public static void init(){
-        AccelerableHandlerBuilders.add(HandlerIDs.BUILDCRAFT,new BuildCraftHandler.Factory());
+        AccelerableHandlerBuilders.add(HandlerIDs.MJ,new BuildCraftHandler.Factory());
     }
 }

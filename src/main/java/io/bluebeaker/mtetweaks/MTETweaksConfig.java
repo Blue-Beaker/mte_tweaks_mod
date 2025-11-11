@@ -73,7 +73,7 @@ public class MTETweaksConfig {
     public static class Thermal{
         @Comment({"Additional tiles to be accelerated by Thermal Mediator.",
                 "Format: modid:tile_id=HANDLER[:params]",
-                "HANDLER can be BASIC, DUMMY or FORESTRY, BUILDCRAFT(when those mods are loaded)"})
+                "HANDLER can be BASIC, DUMMY, RF, or MJ (when BuildCraft is present)"})
         @LangKey("config.mtetweaks.acceleratableTiles.name")
         public String[] acceleratableTiles ={};
 
