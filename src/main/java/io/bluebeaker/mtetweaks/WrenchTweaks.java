@@ -6,6 +6,7 @@ import java.util.Set;
 
 import cofh.api.item.IToolHammer;
 import ic2.core.ref.IC2Material;
+import io.bluebeaker.mtetweaks.wrench.ConfigWrench;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -80,8 +81,8 @@ public class WrenchTweaks {
             return ((IToolHammer) stack.getItem()).isUsable(stack, player, pos);
         }
         ResourceLocation id = stack.getItem().getRegistryName();
-        if (id != null && ConfigHandler.wrenches.containsKey(id)) {
-            Set<Integer> allowedMetas = ConfigHandler.wrenches.get(id);
+        if (id != null && ConfigWrench.wrenches.containsKey(id)) {
+            Set<Integer> allowedMetas = ConfigWrench.wrenches.get(id);
             if (allowedMetas == null || allowedMetas.contains(stack.getMetadata())) {
                 return true;
             }
@@ -95,8 +96,8 @@ public class WrenchTweaks {
      */
     private static boolean isWrenchable(IBlockState state) {
         ResourceLocation id = state.getBlock().getRegistryName();
-        if (id != null && ConfigHandler.wrenchableBlocks.containsKey(id)) {
-            List<Map<String, String>> allowedStates = ConfigHandler.wrenchableBlocks.get(id);
+        if (id != null && ConfigWrench.wrenchableBlocks.containsKey(id)) {
+            List<Map<String, String>> allowedStates = ConfigWrench.wrenchableBlocks.get(id);
             if (allowedStates == null) {
                 return true;
             }

@@ -1,15 +1,8 @@
 package io.bluebeaker.mtetweaks;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import javax.annotation.Nullable;
-
 import net.minecraft.util.ResourceLocation;
+
+import java.util.*;
 
 public class Utils {
     /**
@@ -17,14 +10,14 @@ public class Utils {
      * Example: 1,2,4-6 -> [1,2,4,5,6]
      * @return
      */
-    public static @Nullable Set<Integer> getIntegersFromString(String str){
+    public static Set<Integer> getIntegersFromString(String str){
         String[] split0 = str.split(",");
         Set<Integer> ints = new HashSet<>();
         for(String substr:split0){
             if(substr.contains("-")){
                 String[] split1 = substr.split("-");
-                int start=Integer.valueOf(split1[0]);
-                int end=Integer.valueOf(split1[1]);
+                int start=Integer.parseInt(split1[0]);
+                int end=Integer.parseInt(split1[1]);
                 for(int i=start;i<=end;i++){
                     ints.add(i);
                 }
@@ -33,9 +26,9 @@ public class Utils {
 
             }
         }
-        return null;
+        return ints;
     }
-    public static @Nullable List<Map<String,String>> getMappingsFromString(String str){
+    public static List<Map<String,String>> getMappingsFromString(String str){
         List<Map<String,String>> maps = new ArrayList<>();
         String[] states = str.split(";");
         for(String stateDef:states){
