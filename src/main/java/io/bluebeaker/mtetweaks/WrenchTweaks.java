@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import cofh.api.item.IToolHammer;
 import ic2.core.ref.IC2Material;
 import io.bluebeaker.mtetweaks.wrench.ConfigWrench;
 import net.minecraft.block.properties.IProperty;
@@ -70,15 +69,38 @@ public class WrenchTweaks {
                             world.getTileEntity(pos), itemSilk);
             }
         }
-        if (stack.getItem() instanceof IToolHammer) {
-            ((IToolHammer) stack.getItem()).toolUsed(stack, player, pos);
+        if (ModChecker.cofhcore.isLoaded()) {
+            try {
+                Class<?> hammerClass = Class.forName("cofh.api.item.IToolHammer");
+                Object item = stack.getItem();
+                if (hammerClass.isInstance(item)) {
+                    hammerClass.getMethod("toolUsed", ItemStack.class, EntityPlayer.class, BlockPos.class)
+                            .invoke(item, stack, player, pos);
+                }
+            } catch (ClassNotFoundException e) {
+            } catch (ReflectiveOperationException e) {
+                MTETweaksMod.getLogger().warn("Failed to invoke IToolHammer.toolUsed", e);
+            }
         }
     }
 
     private static boolean isUsableWrench(ItemStack stack, EntityPlayer player, BlockPos pos) {
 
-        if (stack.getItem() instanceof IToolHammer) {
-            return ((IToolHammer) stack.getItem()).isUsable(stack, player, pos);
+        if (ModChecker.cofhcore.isLoaded()) {
+            try {
+                Class<?> hammerClass = Class.forName("cofh.api.item.IToolHammer");
+                Object item = stack.getItem();
+                if (hammerClass.isInstance(item)) {
+                    Object res = hammerClass.getMethod("isUsable", ItemStack.class, EntityPlayer.class, BlockPos.class)
+                            .invoke(item, stack, player, pos);
+                    if (res instanceof Boolean) {
+                        return (Boolean) res;
+                    }
+                }
+            } catch (ClassNotFoundException e) {
+            } catch (ReflectiveOperationException e) {
+                MTETweaksMod.getLogger().warn("Failed to invoke IToolHammer.isUsable", e);
+            }
         }
         ResourceLocation id = stack.getItem().getRegistryName();
         if (id != null && ConfigWrench.wrenches.containsKey(id)) {

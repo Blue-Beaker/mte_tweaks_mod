@@ -7,6 +7,7 @@ public enum ModChecker {
     buildcrafttransport("buildcrafttransport"),
     forestry("forestry"),
     ic2("ic2"),
+    cofhcore("cofhcore"),
     thermalexpansion("thermalexpansion");
 
     public final String modid;
